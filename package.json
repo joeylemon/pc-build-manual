@@ -1,0 +1,13 @@
+{
+  "name": "computer-build-manual",
+  "main": "index.js",
+  "scripts": {
+    "start": "forever start --uid=cbm --append -w index.js",
+    "stop": "forever stop cbm",
+    "log": "tail -fn 500 /home/joey/.forever/cbm.log"
+  },
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
