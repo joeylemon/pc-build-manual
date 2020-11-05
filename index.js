@@ -5,11 +5,12 @@ const fs = require('fs');
 /**
  * Render an error alert at the top of the home page
  * @param {Response} res The express response object
+ * @param {String} msg The error to display
  */
-function renderError(res) {
+function renderError(res, msg) {
     res.render('index', {
         page: `content/home`,
-        error: "The requested URL does not exist."
+        error: msg
     });
 }
 
@@ -17,15 +18,21 @@ function renderError(res) {
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 
+/**
+ * Render the home page
+ */
 app.get('/', function(req, res) {
     res.render('index', {
         page: `content/home`
     });
 });
 
+/**
+ * Utilize EJS templates to render the desired page
+ */
 app.get('/:page', function(req, res) {
     if (!fs.existsSync(`./views/content/${req.params.page}.ejs`))
-        return renderError(res)
+        return renderError(res, "The requested URL does not exist.")
 
     res.render('index', {
         page: `content/${req.params.page}`
