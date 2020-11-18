@@ -28,7 +28,7 @@
 
 <body>
     <div class="wrapper">
-        <%- include('partials/sidebar', {page: locals.page}); %>
+        <%- include('partials/sidebar', {page: locals.page, pages: locals.pages}); %>
 
         <div id="content">
             <%- include('partials/navbar', {page: locals.page}); %>

@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const pages = require('./pages.js');
 
 /**
  * Render an error alert at the top of the home page
@@ -23,7 +24,8 @@ app.use(express.static('./public'));
  */
 app.get('/', function(req, res) {
     res.render('index', {
-        page: `content/home`
+        page: `content/home`,
+        pages: pages
     });
 });
 
@@ -35,7 +37,8 @@ app.get('/:page', function(req, res) {
         return renderError(res, "The requested URL does not exist.")
 
     res.render('index', {
-        page: `content/${req.params.page}`
+        page: `content/${req.params.page}`,
+        pages: pages
     });
 });
 
