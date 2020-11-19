@@ -31,10 +31,23 @@ const pages = [
         "Introduction",
         "Functions of the Major Parts",
     ]),
+    new Page("Choosing Parts", [
+        "Introduction",
+    ]),
     new Page("Cable Management", [
         "Introduction",
         "How to Manage Your Cables",
         "Cable Management Examples"
+    ]),
+    new Page("Assembly", [
+        "Introduction",
+        "CPU",
+        "Memory",
+        "CPU Cooler",
+        "Motherboard",
+        "GPU",
+        "Storage",
+        "Power Supply",
     ]),
     new Page("Post Assembly", [
         "Introduction",

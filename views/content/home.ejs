@@ -13,24 +13,20 @@
         <hr>
         <p>
             In 2019, 65% of Americans played video games, and of those Americans, 52% used a computer
-            to play (2019). Many video games have minimum and recommended requirements for players’
-            computers. Work computers often will not meet all the requirements, so people will need to
-            purchase or build their own computer. Purchasing a prebuilt computer is significantly more
-            expensive than building your own computer. It is similar to purchasing a wooden table for $300
-            when you can build it using $30 dollars worth of wood. Someone who purchases a table usually
-            does not have all the tools and equipment to build their own table.
+            to play [6]. Many video games have minimum and recommended requirements for players’
+            computers. Casual computers, such as work or personal desktops, often will not meet all these requirements. A great choice to meet these requirements is by building a computer yourself, which is significantly cheaper than purchasing a prebuilt computer.
         </p>
         <p>
             Building a computer requires
             only a screwdriver and a few hours, so it is never worth it to spend hundreds of extra dollars
             buying a prebuilt computer.
-            Building a computer requires handling technology costing hundreds of dollars. First-time
+            However, building a computer requires handling technology costing hundreds of dollars. First-time
             computer builders can run into many problems that take hours to solve: learning all the parts of a
             computer, selecting parts for their own computer, connecting the parts together, and maintaining
-            the computer after building it. When you first build a computer, you will probably find use
+            the computer after building it. When you first build a computer, you may use
             wikipedia to learn all the parts of a computer. Then, you would compare parts based on price and
             performance, and select parts that fit together while being in your budget. Next, you would
-            watch several hour long videos that walk through the assembly of a computer. Finally, you
+            watch several hour-long videos that walk through the assembly of a computer. Finally, you
             would build your computer while constantly pausing and playing a video for several hours. This
             manual will combine all these steps to minimize the amount of time you spend building your
             computer while maximizing the amount of time you spend using it.
@@ -57,7 +53,8 @@
                     <ul class="list-group list-group-flush">
                         <% for(const p of pages) { %>
                         <li class="list-group-item">
-                            <a href="<%= p.getID() %>" style="font-weight: bold;"><i class="fas fa-external-link-alt" style="color: gray;"></i> <%= p.title %></a>
+                            <a href="<%= p.getID() %>" style="font-weight: bold;"><i class="fas fa-external-link-alt"
+                                    style="color: gray;"></i> <%= p.title %></a>
                             <ul>
                                 <% for(const section of p.getSections()) { %>
                                 <li><%= section.title %></li>

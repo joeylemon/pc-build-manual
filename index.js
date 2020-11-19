@@ -11,7 +11,10 @@ const { pages, getNextPage, getLastPage } = require('./pages.js');
 function renderError(res, msg) {
     res.render('index', {
         page: `content/home`,
-        error: msg
+        error: msg,
+        pages: pages,
+        lastPage: getLastPage("home"),
+        nextPage: getNextPage("home")
     });
 }
 
