@@ -46,6 +46,28 @@
             those parts, and maintaining the computer as it wears down over time. It gives tips for
             cable management, and selecting other accessories such as monitors, mice, and keyboards. Additionally, this
             website covers replacing or upgrading the parts in a computer, and when a computer needs to be upgraded.
+            Below is a table of contents to help you with navigating the website:
         </p>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        Computer Building Guide
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <% for(const p of pages) { %>
+                        <li class="list-group-item">
+                            <a href="<%= p.getID() %>" style="font-weight: bold;"><i class="fas fa-external-link-alt" style="color: gray;"></i> <%= p.title %></a>
+                            <ul>
+                                <% for(const section of p.getSections()) { %>
+                                <li><%= section.title %></li>
+                                <% } %>
+                            </ul>
+                        </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

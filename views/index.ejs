@@ -35,6 +35,15 @@
 
             <%- include(page); %>
 
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-6" style="text-align: left;">
+                <a class="btn btn-primary <%- lastPage !== undefined ? "" : "disabled" %>" href="<%- lastPage !== undefined ? lastPage.getID() : "" %>" role="button"><i class="fas fa-caret-left" style="margin-right: 5px;"></i> Last Page</a>
+                </div>
+                <div class="col-6" style="text-align: right;">
+                    <a class="btn btn-primary <%- nextPage !== undefined ? "" : "disabled" %>" href="<%- nextPage !== undefined ? nextPage.getID() : "" %>" role="button">Next Page <i class="fas fa-caret-right" style="margin-left: 5px;"></i></a>
+                </div>
+            </div>
+
             <div class="row justify-content-end" style="margin-top: 20px;">
                 <div class="col-6" style="text-align: right;">
                     <p style="color: #9e9e9e;">This page contains <span id="word-count">?</span> words.</p>

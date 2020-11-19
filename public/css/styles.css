@@ -8,6 +8,23 @@ h1, h2, p, li {
     font-family: 'Roboto', sans-serif;
 }
 
+.btn-primary {
+    background-color: #7386D5;
+    border-color: #5c6eb6;
+}
+
+.btn-primary.disabled {
+    background-color: #7386D5;
+    border-color: #5c6eb6;
+    opacity: 0.7;
+}
+
+.caption {
+    font-size: 10px;
+    margin: 0px;
+    padding: 0px;
+}
+
 a,
 a:hover,
 a:focus {
@@ -44,15 +61,15 @@ a:focus {
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 275px;
+    max-width: 275px;
     background: #7386D5;
     color: #fff;
     transition: all 0.3s;
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -275px;
 }
 
 #sidebar .sidebar-header {
@@ -161,8 +178,8 @@ a.article:hover {
 }
 
 .yt-embed-inline {
-    float: left;
-    margin: 0px 30px 0px 0px;
+    float: right;
+    margin: 0px 0px 0px 30px;
 }
 
 .yt-embed-inline > iframe {
@@ -174,7 +191,7 @@ a.article:hover {
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        margin-left: -275px;
     }
     #sidebar.active {
         margin-left: 0;

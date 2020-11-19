@@ -4,70 +4,18 @@
     </div>
 
     <ul class="list-unstyled components">
-        <li <% if (page === 'content/home') { %>class="active" <% } %>>
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
+        <% for(const p of pages) { %>
+        <li <% if (page === p.getPath()) { %>class="active" <% } %>>
+            <a href="#<%= p.getID() %>-submenu" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle"><%= p.title %></a>
+            <ul class="collapse list-unstyled" id="<%= p.getID() %>-submenu">
+                <% for(const s of p.getSections()) { %>
                 <li>
-                    <a href="home#introduction">Introduction</a>
+                    <a href="<%= p.getID() %>#<%= s.id %>"><%= s.title %></a>
                 </li>
-                <li>
-                    <a href="home#table-of-contents">Table of Contents</a>
-                </li>
+                <% } %>
             </ul>
         </li>
-
-        <li <% if (page === 'content/cable-management') { %>class="active" <% } %>>
-            <a href="#cm-menu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Cable
-                Management</a>
-            <ul class="collapse list-unstyled" id="cm-menu">
-                <li>
-                    <a href="cable-management#introduction">Introduction</a>
-                </li>
-                <li>
-                    <a href="cable-management#how-to-manage-your-cables">How to Manage Your Cables</a>
-                </li>
-                <li>
-                    <a href="cable-management#cable-management-examples">Cable Management Examples</a>
-                </li>
-            </ul>
-        </li>
-
-        <li <% if (page === 'content/maintenance') { %>class="active" <% } %>>
-            <a href="#maintenance-menu" data-toggle="collapse" aria-expanded="false"
-                class="dropdown-toggle">Maintenance</a>
-            <ul class="collapse list-unstyled" id="maintenance-menu">
-                <li>
-                    <a href="maintenance#introduction">Introduction</a>
-                </li>
-                <li>
-                    <a href="maintenance#cleaning-cpu-cooler">CPU Cooler</a>
-                </li>
-                <li>
-                    <a href="maintenance#cleaning-gpu">GPU</a>
-                </li>
-                <li>
-                    <a href="maintenance#cleaning-power-supply">Power Supply</a>
-                </li>
-                <li>
-                    <a href="maintenance#reapplying-thermal-paste">Thermal Paste</a>
-                </li>
-                <li>
-                    <a href="maintenance#cleaning-accessories">Accessories</a>
-                </li>
-            </ul>
-        </li>
-
-        <li <% if (page === 'content/computer-parts') { %>class="active" <% } %>>
-            <a href="#computer-parts-menu" data-toggle="collapse" aria-expanded="false"
-                class="dropdown-toggle">Computer Parts</a>
-            <ul class="collapse list-unstyled" id="computer-parts-menu">
-                <li>
-                    <a href="computer-parts#introduction">Introduction</a>
-                </li>
-                <li>
-                    <a href="computer-parts#functions-of-major-parts">Functions of the Major Parts</a>
-                </li>
-            </ul>
-        </li>
+        <% } %>
     </ul>
 </nav>
