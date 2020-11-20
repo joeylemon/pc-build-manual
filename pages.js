@@ -33,6 +33,10 @@ const pages = [
     ]),
     new Page("Choosing Parts", [
         "Introduction",
+        "$500 Budget",
+        "$1,000 Budget",
+        "$1,500 Budget",
+        "$2,000 Budget",
     ]),
     new Page("Cable Management", [
         "Introduction",
@@ -48,6 +52,7 @@ const pages = [
         "GPU",
         "Storage",
         "Power Supply",
+        "Testing",
     ]),
     new Page("Post Assembly", [
         "Introduction",

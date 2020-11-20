@@ -5,19 +5,16 @@ $(document).ready(function () {
         $('#sidebar').toggleClass('active')
     })
 
+    // If on references page, highlight given reference in URL
+    if (window.location.href.includes("references") && window.location.hash) {
+        const hash = window.location.hash.replace('#', '')
+        if (hash.length > 2) return;
+        
+        $(`#${hash}`).css({backgroundColor: "yellow"})
+    }
+
     // Calculate word count and set text at bottom of page
     $('#word-count').html(getWordCount())
-
-    $.ajax({
-        url: "https://pcpartpicker.com/product/K8fhP6/msi-geforce-gtx-1660-ti-6-gb-gaming-x-video-card-gtx-1660-ti-gaming-x-6g",
-        method: "get"
-    }).done(() => {
-        // $(".td__logo").each((i, obj) => {
-        //     console.log(obj.children[0].children[0].src)
-        //     console.log(obj.nextElementSibling.innerText)
-        // })
-        console.log("done")
-    })
 
 })
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Computer Building Guide</title>
+    <title><%= pgName(page) %> | Computer Building Guide</title>
 
     <link rel="icon" type="image/png" href="images/icon.png">
 
@@ -37,10 +37,15 @@
 
             <div class="row" style="margin-top: 20px;">
                 <div class="col-6" style="text-align: left;">
-                <a class="btn btn-primary <%- lastPage !== undefined ? "" : "disabled" %>" href="<%- lastPage !== undefined ? lastPage.getID() : "" %>" role="button"><i class="fas fa-caret-left" style="margin-right: 5px;"></i> Last Page</a>
+                    <% if (lastPage) { %>
+                    <a class="btn btn-primary" href="<%- lastPage !== undefined ? lastPage.getID() : "" %>" role="button"><i class="fas fa-caret-left" style="margin-right: 5px;"></i> Last Page</a>
+                    <% } %>
                 </div>
+
                 <div class="col-6" style="text-align: right;">
-                    <a class="btn btn-primary <%- nextPage !== undefined ? "" : "disabled" %>" href="<%- nextPage !== undefined ? nextPage.getID() : "" %>" role="button">Next Page <i class="fas fa-caret-right" style="margin-left: 5px;"></i></a>
+                    <% if (nextPage) { %>
+                    <a class="btn btn-primary" href="<%- nextPage !== undefined ? nextPage.getID() : "" %>" role="button">Next Page <i class="fas fa-caret-right" style="margin-left: 5px;"></i></a>
+                    <% } %>
                 </div>
             </div>
 

@@ -25,6 +25,14 @@ h1, h2, p, li {
     padding: 0px;
 }
 
+.part-image-div {
+    margin-top: 10px;
+}
+
+.part-image-div img {
+    width: 150px;
+}
+
 a,
 a:hover,
 a:focus {

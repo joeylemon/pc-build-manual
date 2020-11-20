@@ -8,7 +8,7 @@
             you ever need extra information on that specific part.</p>
         <div style="float: right;margin-left: 10px;">
             <img src="images/workspace.jpg" style="width: 400px;" />
-            <p class="caption">A prepared workspace for a computer build [8]</p>
+            <p class="caption">A prepared workspace for a computer build <%- ref(8) %></p>
         </div>
         <p>Before continuing with the actual assembly, it's important to prepare your work area with everything you'll
             need to build the computer:</p>
@@ -29,9 +29,9 @@
         <h2>CPU Installation</h2>
         <hr>
         <div class="yt-embed-inline">
-            <iframe src="https://www.youtube.com/embed/qCPIEYfN_hc?modestbranding=1&start=71&end=155" allowfullscreen>
+            <iframe src="https://www.youtube.com/embed/qCPIEYfN_hc?modestbranding=1&start=100&end=155" allowfullscreen>
             </iframe>
-            <p class="caption">A clip showing how to install the CPU [7]</p>
+            <p class="caption">A clip showing how to install the CPU <%- ref(7) %></p>
         </div>
         <p>
             Usually, the first step in a computer build is inserting the CPU into its respective socket on the motherboard. This step comes first because it is the easiest to perform before screwing the motherboard into the case.
@@ -48,13 +48,13 @@
 </div>
 
 <div class="card">
-    <div class="card-body" id="cpu">
+    <div class="card-body" id="memory">
         <h2>Memory Installation</h2>
         <hr>
         <div class="yt-embed-inline">
             <iframe src="https://www.youtube.com/embed/qCPIEYfN_hc?modestbranding=1&start=155&end=220" allowfullscreen>
             </iframe>
-            <p class="caption">A clip showing how to install the RAM [7]</p>
+            <p class="caption">A clip showing how to install the RAM <%- ref(7) %></p>
         </div>
         <p>
             The common next step after installing the CPU is to install your memory. This might be the easiest process in the entire build, because installing the RAM requires nothing but a little push into its socket. There will even be an audible click letting you know it was done correctly.
@@ -67,5 +67,140 @@
             <li>Repeat this process for each memory stick (if you have multiple).</li>
         </ol>
         <p>Your memory is now installed in your motherboard. Make sure all memory sticks have both of their clips in the down position. If so, you're ready to move onto the next step.</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body" id="cpu-cooler">
+        <h2>CPU Cooler Installation</h2>
+        <hr>
+        <div class="yt-embed-inline">
+            <iframe src="https://www.youtube.com/embed/qCPIEYfN_hc?modestbranding=1&start=280&end=375" allowfullscreen>
+            </iframe>
+            <p class="caption">A clip showing how to install a CPU cooler <%- ref(7) %></p>
+        </div>
+        <p>
+            The last step before putting the motherboard in the case is to install the cooler over your CPU. This involves the usage of thermal paste and a few screws to properly install a cooler.
+        </p>
+        <ol>
+            <li>Place the cooler backplate on the bottom of the motherboard (if your cooler has a backplate).</li>
+            <li>Screw the backplate into place from the top of the motherboard, using the provided screws with the cooler.</li>
+            <li>Apply thermal paste onto the top of the CPU by drawing an "X" pattern.</li>
+            <li>Gently lay the CPU cooler on top of the CPU, with the flat metal face of the cooler touching the CPU.</li>
+            <li>Screw the cooler into place using the provided screws.</li>
+            <li>Finally, take the wire coming from the cooler and plug it into the motherboard into the CPU fan header (typically labeled CPU_FAN1).</li>
+        </ol>
+        <p>Your cooler is now installed on your CPU. At this point, you are finally ready to put the motherboard inside of the case.</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body" id="motherboard">
+        <h2>Motherboard Installation</h2>
+        <hr>
+        <div class="yt-embed-inline">
+            <iframe src="https://www.youtube.com/embed/qCPIEYfN_hc?modestbranding=1&start=375&end=460" allowfullscreen>
+            </iframe>
+            <p class="caption">A clip showing how to install the motherboard <%- ref(7) %></p>
+        </div>
+        <p>
+            After installing all of the easiest parts onto the motherboard, you may now put the motherboard in the case. Once again, this step should not come with too much difficulty, as it only requires a screwdriver.
+        </p>
+        <ol>
+            <li>Insert the I/O shield that came with the motherboard into the back of the case.</li>
+            <li>Place the case on its side, with the main body being accessible from the top.</li>
+            <li>Analyze the layout of screw holes on the motherboard, and insert standoffs into the case which would line up with the holes.</li>
+            <li>Gently place the motherboard into the case, lining up each standoff with each hole in the board.</li>
+            <li>Screw the motherboard into place with the provided screws, making sure they are entering the standoffs correctly.</li>
+            <li>Check that the motherboard outputs properly fit into the I/O shield.</li>
+        </ol>
+        <p>Your motherboard is now installed in your case. If the motherboard outputs don't align perfectly with the I/O shield on the back of the case, you may need to repeat this process, double-checking the alignment of every screw. Otherwise, you can now move on to the graphics card installation.</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body" id="gpu">
+        <h2>GPU Installation</h2>
+        <hr>
+        <div class="yt-embed-inline">
+            <iframe src="https://www.youtube.com/embed/qCPIEYfN_hc?modestbranding=1&start=450&end=513" allowfullscreen>
+            </iframe>
+            <p class="caption">A clip showing how to install the GPU <%- ref(7) %></p>
+        </div>
+        <p>
+            Once the motherboard is in the case, it is recommended to only then install the GPU. Installing it before the motherboard is in the case could result in damage during the moving of the board into the case, and it would also get in the way of screwing down the board.
+        </p>
+        <ol>
+            <li>Identify the PCI slot (long, narrow, horizontal sockets on the bottom of the motherboard) in which the GPU should be installed. Usually, you'll install it in the top-most slot.</li>
+            <li>Remove the two I/O plates that correspond with the chosen slot from the back side of the case, by removing the screw holding each in place.</li>
+            <li>With the outputs of the GPU facing the back side of the case, insert the GPU into the PCI slot. It should automatically lock into place.</li>
+            <li>Finally, secure the GPU into place by screwing the I/O screws back into the back side of the case.</li>
+        </ol>
+        <p>Your GPU is now installed in your case. The GPU will sag slightly, especially if it's a heavier card. However, if it has an extremely obvious sag, it may have been installed incorrectly, and you will need to repeat this process. If not, you can move on to the next step.</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body" id="storage">
+        <h2>Storage Installation</h2>
+        <hr>
+        <div class="yt-embed-inline">
+            <iframe src="https://www.youtube.com/embed/qCPIEYfN_hc?modestbranding=1&start=513&end=554" allowfullscreen>
+            </iframe>
+            <p class="caption">A clip showing how to install storage <%- ref(7) %></p>
+        </div>
+        <p>
+            Installing your storage device(s) is very straightforward. Every case comes with standard removable holders for both hard disk drives (HDDs) and solid state drives (SSDs). There are also ways to install an SSD elsewhere, but these instructions will put both types of storage into the removable holders.
+        </p>
+        <ol>
+            <li>Remove a disk drive holder from the case by pinching the two extrusions inwards until it comes loose.</li>
+            <li>Place the storage device inside the holder.</li>
+            <li>Screw the device into place through the standard holes in the holder, using the screws that came with the device.</li>
+            <li>Replace the holder into the case by firmly pushing it back into its original slot. It should snap into place by itself.</li>
+            <li>Plug one end of a SATA cable (the cable that came with your storage device) into the back of your device.</li>
+            <li>Managing the cable through appropriate holes in the case, plug the other end of the SATA cable into the motherboard (the respective header on the motherboard will be labled with "SATA").</li>
+        </ol>
+        <p>Your storage is now installed in your case. If you purchased multiple storage devices, repeat this process in different removable holders for each device.</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body" id="psu">
+        <h2>PSU Installation</h2>
+        <hr>
+        <div class="yt-embed-inline">
+            <iframe src="https://www.youtube.com/embed/qCPIEYfN_hc?modestbranding=1&start=513&end=554" allowfullscreen>
+            </iframe>
+            <p class="caption">A clip showing how to install the PSU <%- ref(7) %></p>
+        </div>
+        <p>
+            Once all other components have been installed, it is time to put the power supply unit into the case and plug everything into it. Every component has a different cable that plugs into it, and only certain cables will fit into certain spots of the PSU. These facts help you provide power with the correct cables. Make sure you keep cable management in mind during this process. Afterwards, you'll finally be able to turn on your computer to see if everything works.
+        </p>
+        <ol>
+            <li>With the case standing upright, place the PSU on the bottom left of the case, so the single power input is facing the backside.</li>
+            <li>Screw the PSU into place from the outside. There will typically be four screws in each corner of the unit.</li>
+            <li>Plug the 24-pin cable (the largest cable that came with the PSU) into the 24-pin slot on the PSU.</li>
+            <li>Plug the other end of the 24-pin cable into slot on the motherboard, typically on the right side of the board.</li>
+            <li>Plug one end of the 8-pin cable into the PSU, and the other end into the CPU power header, typically on the top of the motherboard.</li>
+            <li>Plug one end of the 6-pin cable into the PSU, and the other end into the GPU.</li>
+            <li>Plug one end of the flat-head cable into the PSU, and the other end into your storage device.</li>
+            <li>Plug the front case panel cables into the appropriate slots of the motherboard (each slot will be labeled).</li>
+        </ol>
+        <p>Your PSU is now installed in your case, meaning you can now test the computer.</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body" id="testing">
+        <h2>Testing the Build</h2>
+        <hr>
+        <p>Every component is now installed into your case. At this point, it makes sense to test the configuration before closing the case and setting it up in your workspace. In order to make sure the computer works properly, you must:</p>
+        <ol>
+            <li>Plug a keyboard, mouse, and a monitor into the backside of the case.</li>
+            <li>Plug the outlet cable into the PSU, and flip the PSU switch to on.</li>
+            <li>Check all cables are fully plugged in and there is no loose metal in the case.</li>
+            <li>Press the power button on the case to turn on the computer.</li>
+        </ol>
+        <p>If the monitor displays an image, the CPU cooler fan and GPU fans are spinning, and the case lights are glowing, then you have properly built your computer. If nothing turns on at all, double-check the PSU connections and that the PSU switch is flipped to the "on" position. If certain components don't seem to be working, make sure they are inserted into the motherboard correctly.</p>
     </div>
 </div>
