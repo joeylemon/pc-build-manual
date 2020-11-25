@@ -15,7 +15,7 @@
         <p>Before continuing with the actual assembly, it's important to prepare your work area with everything you'll
             need to build the computer:</p>
         <ul>
-            <li>All parts of the computer unboxed and nearby. Keep delicate components like the CPU or GPU in their wrappers
+            <li>All parts of the computer unboxed and nearby. Keep delicate components like the <%- def("CPU") %> or <%- def("GPU") %> in their wrappers
                 after taking them out of the box.</li>
             <li>Open computer case (both side panels taken off)</li>
             <li>Phillips head screwdriver</li>
@@ -33,10 +33,10 @@
         <div class="yt-embed-inline">
             <iframe src="https://www.youtube.com/embed/qCPIEYfN_hc?modestbranding=1&start=100&end=155" allowfullscreen>
             </iframe>
-            <p class="caption">A clip showing how to install the CPU <%- ref(7) %></p>
+            <p class="caption">A clip showing how to install the <%- def("CPU") %> <%- ref(7) %></p>
         </div>
         <p>
-            Usually, the first step in a computer build is inserting the CPU into its respective socket on the motherboard. This step comes first because it is the easiest to perform before screwing the motherboard into the case.
+            Usually, the first step in a computer build is inserting the <%- def("CPU") %> into its respective socket on the motherboard. This step comes first because it is the easiest to perform before screwing the motherboard into the case.
         </p>
         <ol>
             <li>First, lay the motherboard with its wrapper beneath it on a flat surface.</li>
@@ -45,7 +45,7 @@
             <li>Gently lay your CPU into the socket. This step should not require any force, as the CPU should fall into place on its own.</li>
             <li>Finally, close the CPU socket by pulling its small metal arm back into place.</li>
         </ol>
-        <p>At this point, your CPU is installed in your motherboard. If you noticed any large resistance while installing the CPU, double-check your arrow alignment. Otherwise, you're ready to move onto the next step.</p>
+        <p>At this point, your <%- def("CPU") %> is installed in your motherboard. If you noticed any large resistance while installing the <%- def("CPU") %>, double-check your arrow alignment. Otherwise, you're ready to move onto the next step.</p>
     </div>
 </div>
 
@@ -56,16 +56,16 @@
         <div class="yt-embed-inline">
             <iframe src="https://www.youtube.com/embed/qCPIEYfN_hc?modestbranding=1&start=155&end=220" allowfullscreen>
             </iframe>
-            <p class="caption">A clip showing how to install the RAM <%- ref(7) %></p>
+            <p class="caption">A clip showing how to install the <%- def("RAM") %> <%- ref(7) %></p>
         </div>
         <p>
-            The common next step after installing the CPU is to install your memory. This might be the easiest process in the entire build, because installing the RAM requires nothing but a little push into its socket. There will even be an audible click letting you know it was done correctly.
+            The common next step after installing the <%- def("CPU") %> is to install your memory. This might be the easiest process in the entire build, because installing the <%- def("RAM") %> requires nothing but a little push into its socket. There will even be an audible click letting you know it was done correctly.
         </p>
         <ol>
             <li>Open the retention clips on the tops and bottoms of each memory socket.</li>
             <li>Find the small slit in your RAM, and match this slit to the extrusion within the memory socket. These alignment tools make sure the RAM is installed the correct direction.</li>
             <li>Start pushing the RAM into the socket. This may require a little more force than you may deem comfortable, but it is necessary to install the RAM.</li>
-            <li>Stop pushing once you hear an audible click and both clips on the top and bottom of the RAM socket are in the down position.</li>
+            <li>Stop pushing once you hear an audible click and both clips on the top and bottom of the RAM socket are in the locked position.</li>
             <li>Repeat this process for each memory stick (if you have multiple).</li>
         </ol>
         <p>Your memory is now installed in your motherboard. Make sure all memory sticks have both of their clips in the down position. If so, you're ready to move onto the next step.</p>
@@ -82,7 +82,7 @@
             <p class="caption">A clip showing how to install a CPU cooler <%- ref(7) %></p>
         </div>
         <p>
-            The last step before putting the motherboard in the case is to install the cooler over your CPU. This involves the usage of thermal paste and a few screws to properly install a cooler.
+            The last step before putting the motherboard in the case is to install the cooler over your <%- def("CPU") %>. This involves the usage of thermal paste and a few screws to properly install a cooler.
         </p>
         <ol>
             <li>Place the cooler backplate on the bottom of the motherboard (if your cooler has a backplate).</li>
@@ -92,7 +92,7 @@
             <li>Screw the cooler into place using the provided screws.</li>
             <li>Finally, take the wire coming from the cooler and plug it into the motherboard into the CPU fan header (typically labeled CPU_FAN1).</li>
         </ol>
-        <p>Your cooler is now installed on your CPU. At this point, you are finally ready to put the motherboard inside of the case.</p>
+        <p>Your cooler is now installed on your <%- def("CPU") %>. At this point, you are finally ready to put the motherboard inside of the case.</p>
     </div>
 </div>
 
@@ -127,10 +127,10 @@
         <div class="yt-embed-inline">
             <iframe src="https://www.youtube.com/embed/qCPIEYfN_hc?modestbranding=1&start=450&end=513" allowfullscreen>
             </iframe>
-            <p class="caption">A clip showing how to install the GPU <%- ref(7) %></p>
+            <p class="caption">A clip showing how to install the <%- def("GPU") %> <%- ref(7) %></p>
         </div>
         <p>
-            Once the motherboard is in the case, it is recommended to only then install the GPU. Installing it before the motherboard is in the case could result in damage during the moving of the board into the case, and it would also get in the way of screwing down the board.
+            Once the motherboard is in the case, it is recommended to only then install the <%- def("GPU") %>. Installing it before the motherboard is in the case could result in damage during the moving of the board into the case, and it would also get in the way of screwing down the board.
         </p>
         <ol>
             <li>Identify the PCI slot (long, narrow, horizontal sockets on the bottom of the motherboard) in which the GPU should be installed. Usually, you'll install it in the top-most slot.</li>
@@ -138,7 +138,7 @@
             <li>With the outputs of the GPU facing the back side of the case, insert the GPU into the PCI slot. It should automatically lock into place.</li>
             <li>Finally, secure the GPU into place by screwing the I/O screws back into the back side of the case.</li>
         </ol>
-        <p>Your GPU is now installed in your case. The GPU will sag slightly, especially if it's a heavier card. However, if it has an extremely obvious sag, it may have been installed incorrectly, and you will need to repeat this process. If not, you can move on to the next step.</p>
+        <p>Your <%- def("GPU") %> is now installed in your case. The <%- def("GPU") %> will sag slightly, especially if it's a heavier card. However, if it has an extremely obvious sag, it may have been installed incorrectly, and you will need to repeat this process. If not, you can move on to the next step.</p>
     </div>
 </div>
 
@@ -173,10 +173,10 @@
         <div class="yt-embed-inline">
             <iframe src="https://www.youtube.com/embed/qCPIEYfN_hc?modestbranding=1&start=513&end=554" allowfullscreen>
             </iframe>
-            <p class="caption">A clip showing how to install the PSU <%- ref(7) %></p>
+            <p class="caption">A clip showing how to install the <%- def("PSU") %> <%- ref(7) %></p>
         </div>
         <p>
-            Once all other components have been installed, it is time to put the power supply unit into the case and plug everything into it. Every component has a different cable that plugs into it, and only certain cables will fit into certain spots of the PSU. These facts help you provide power with the correct cables. Make sure you keep cable management in mind during this process. Afterwards, you'll finally be able to turn on your computer to see if everything works.
+            Once all other components have been installed, it is time to put the power supply unit into the case and plug everything into it. Every component has a different cable that plugs into it, and only certain cables will fit into certain spots of the <%- def("PSU") %>. These facts help you provide power with the correct cables. Make sure you keep cable management in mind during this process. Afterwards, you'll finally be able to turn on your computer to see if everything works.
         </p>
         <ol>
             <li>With the case standing upright, place the PSU on the bottom left of the case, so the single power input is facing the backside.</li>
@@ -188,7 +188,7 @@
             <li>Plug one end of the flat-head cable into the PSU, and the other end into your storage device.</li>
             <li>Plug the front case panel cables into the appropriate slots of the motherboard (each slot will be labeled).</li>
         </ol>
-        <p>Your PSU is now installed in your case, meaning you can now test the computer.</p>
+        <p>Your <%- def("PSU") %> is now installed in your case, meaning you can now test the computer.</p>
     </div>
 </div>
 
@@ -203,6 +203,6 @@
             <li>Check all cables are fully plugged in and there is no loose metal in the case.</li>
             <li>Press the power button on the case to turn on the computer.</li>
         </ol>
-        <p>If the monitor displays an image, the CPU cooler fan and GPU fans are spinning, and the case lights are glowing, then you have properly built your computer. If nothing turns on at all, double-check the PSU connections and that the PSU switch is flipped to the "on" position. If certain components don't seem to be working, make sure they are inserted into the motherboard correctly.</p>
+        <p>If the monitor displays an image, the CPU cooler fan and GPU fans are spinning, and the case lights are glowing, then you have properly built your computer. If nothing turns on at all, double-check the <%- def("PSU") %> connections and that the <%- def("PSU") %> switch is flipped to the "on" position. If certain components don't seem to be working, make sure they are inserted into the motherboard correctly.</p>
     </div>
 </div>

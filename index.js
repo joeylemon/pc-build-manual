@@ -28,6 +28,12 @@ app.locals.ref = num => {
     return `<a href="references#${num}" style="color: #5d9dcc;">[${num}]</a>`
 }
 
+app.locals.def = (term, text) => {
+    const id = term.replace(/ /g, "-").toLowerCase()
+    const txt = text ? text : term
+    return `<a href="home#def-${id}" style="color: #194e75;border-bottom: 1px dashed #194e75;">${txt}</a>`
+}
+
 app.locals.pgName = path => {
     const name = path.split("/")[1].replace(/-/g, " ")
     return toTitle(name)
@@ -49,7 +55,7 @@ app.get('/', function (req, res) {
  * Utilize EJS templates to render the desired page
  */
 app.get('/:page', function (req, res) {
-    if (!fs.existsSync(`./views/content/${req.params.page}.ejs`))
+    if (!fs.existsSync(`./views/content/${req.params.page}.html`))
         return renderError(res, "The requested URL does not exist.")
 
     res.render('index', {

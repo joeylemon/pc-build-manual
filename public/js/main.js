@@ -13,6 +13,14 @@ $(document).ready(function () {
         $(`#${hash}`).css({backgroundColor: "yellow"})
     }
 
+    // If on home page, highlight given definition in URL
+    if (window.location.href.includes("home") && window.location.hash) {
+        const hash = window.location.hash.replace('#', '')
+        if (!hash.includes("def")) return;
+        
+        $(`#${hash}`).css({backgroundColor: "#ffff0066"})
+    }
+
     // Calculate word count and set text at bottom of page
     $('#word-count').html(getWordCount())
 
