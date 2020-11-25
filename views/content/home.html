@@ -17,8 +17,8 @@
         <hr>
         <p>
             In 2019, 65% of Americans played video games, and of those Americans, 52% used a computer
-            to play <%- ref(1) %>. Many video games have minimum and recommended requirements for players’
-            computers. Casual computers, such as work or personal desktops, often will not meet all these requirements.
+            to play <%- ref("ESA") %>. Many video games have minimum and recommended requirements for players’
+            computers. Regular computers, such as work or personal desktops, often will not meet all these requirements.
             A great choice to meet these requirements is by building a computer yourself, which is significantly cheaper
             than purchasing a prebuilt computer.
         </p>
@@ -30,7 +30,7 @@
             computer builders can run into many problems that take hours to solve: learning all the parts of a
             computer, selecting parts for their own computer, connecting the parts together, and maintaining
             the computer after building it. When you first build a computer, you may use
-            wikipedia to learn all the parts of a computer. Then, you would compare parts based on price and
+            Wikipedia to learn all the parts of a computer. Then, you would compare parts based on price and
             performance, and select parts that fit together while being in your budget. Next, you would
             watch several hour-long videos that walk through the assembly of a computer. Finally, you
             would build your computer while constantly pausing and playing a video for several hours. This
@@ -77,10 +77,10 @@
 </div>
 
 <div class="card">
-    <div class="card-body" id="introduction">
+    <div class="card-body" id="terms">
         <h2>Terms</h2>
         <hr>
-        <p>There are many terms and acronyms throughout this website which may be need extra clarification. Many of these terms are listed below:</p>
+        <p>There are many terms and acronyms throughout this website that may need extra clarification. Many of these are listed below, and their occurances throughout the webpage are hyperlinked to their appropriate definition here:</p>
         <table class="table">
             <thead>
                 <tr>
@@ -91,19 +91,23 @@
             <tbody>
                 <tr id="def-cpu">
                     <td>CPU</td>
-                    <td>Short for central processing unit, the CPU is the component within a computer that executes instructions that make up a computer program.</td>
+                    <td>Short for central processing unit, the CPU is the component within a computer that executes all of the regular instructions of the computer <%- ref("Kuck") %>.</td>
                 </tr>
                 <tr id="def-gpu">
                     <td>GPU</td>
-                    <td>Short for graphics processing unit, the GPU is the component within a computer that accelerates the creation of images in a frame intended for output to a display device. It is </td>
+                    <td>Short for graphics processing unit, the GPU is the component within a computer that accelerates the creation of images intended for output to a display device <%- ref("Kuck") %>. As such, it is extremely important for rendering video games faster and at higher resolutions.</td>
                 </tr>
                 <tr id="def-psu">
                     <td>PSU</td>
-                    <td>Short for power supply unit, the PSU converts wall outlet AC (alternating current) power to DC (direct current) power, which is what computer components require.</td>
+                    <td>Short for power supply unit, the PSU converts wall outlet AC (alternating current) power to DC (direct current) power, which is what computer components require to run properly <%- ref("Kuck") %>.</td>
                 </tr>
                 <tr id="def-ram">
                     <td>RAM</td>
-                    <td>Short for random access memory, the RAM is the component within a computer that is typically used to store working data and machine code. RAM has been released in different generations, the latest being Double Data Rate 5 (DDR5). The previous generations are DDR4, DDR3, DDR2, and DDR. The acronym DDR4-3600 means a set of RAM is the in the fourth generation and runs at 3600 MHz.</td>
+                    <td>Short for random access memory, RAM is the component within a computer that is typically used to store working data and machine code <%- ref("Kuck") %>. It is installed in the DIMM (dual in-line memory module) slots on a motherboard. RAM has been released in different generations, with the latest being Double Data Rate 5 (DDR5). The previous generations are DDR4, DDR3, DDR2, and DDR. The acronym DDR4-3600 means a set of RAM is in the fourth generation and runs at 3600 MHz.</td>
+                </tr>
+                <tr id="def-sata">
+                    <td>SATA</td>
+                    <td>Short for serial advanced technology attachment, SATA cables are in charge of connecting storage devices (hard disk drives and solid state drives) to the motherboard, providing the ability to read and write from them <%- ref("Kuck") %>.</td>
                 </tr>
                 <tr id="def-aftermarket">
                     <td>Aftermarket</td>
@@ -111,15 +115,23 @@
                 </tr>
                 <tr id="def-form-factor">
                     <td>Form factor</td>
-                    <td>Motherboards come in different standard sizes, from largest to smallest: EATX, ATX, Micro-ATX (mATX), and Mini-ATX. Cases are typically designed for specific form factors.</td>
+                    <td>Motherboards come in different standard sizes, from largest to smallest: EATX, ATX, Micro-ATX (mATX), and Mini-ATX <%- ref("LEI") %>. Cases are typically designed for specific form factors.</td>
+                </tr>
+                <tr id="def-capacity">
+                    <td>Capacity</td>
+                    <td>Information on a computer is stored in units called bytes. Bytes are a collection of eight bits (ones and zeroes), with megabytes (MBs) being one million bytes, gigabytes (GBs) being one billion bytes, and terabyte (TBs) being one trillion bytes <%- ref("Kuck") %>. Storage devices are advertised by their capacity, typically in the hundreds of gigabytes. RAM, on the other hand, is advertised in the tens of gigabytes, since they have a much smaller capacity but an extremely faster speed.</td>
                 </tr>
                 <tr id="def-clock-speed">
                     <td>Clock speed</td>
-                    <td>Computer components are often described with their clock speed, such as the CPU, GPU, or RAM. Clock speed describes the speed of electronic transmission, measured in hertz (cycles per second). MHz (megahertz) is one million hertz, GHz (gigahertz) is one billion hertz. Typically, a component with a higher clock speed will perform faster.</td>
+                    <td>Computer components are often described with their clock speed, such as the CPU, GPU, or RAM. Clock speed describes the speed of electronic transmission, measured in hertz (cycles per second) <%- ref("Kuck") %>. Megahertz (MHz) is one million hertz and gigahertz (GHz) is one billion hertz. Typically, a component with a higher clock speed will perform faster.</td>
                 </tr>
                 <tr id="def-bios">
                     <td>BIOS</td>
-                    <td>Short for basic input/output system, the BIOS is pre-installed on every motherboard and allows hardware-level system configuration, such as setting clock speeds or selecting which storage device to use to boot into an operating system (such as Windows).</td>
+                    <td>Short for basic input/output system, the BIOS is pre-installed on every motherboard and allows hardware-level system configuration, such as setting clock speeds or selecting which storage device to use to boot into an operating system (such as Windows) <%- ref("Kuck") %>.</td>
+                </tr>
+                <tr id="def-rgb">
+                    <td>RGB</td>
+                    <td>Short for "red/green/blue," RGB describes the three colors that can be combined to create any other color <%- ref("Hirsch") %>. Typically, RGB is used as shorthand for describing RGB LEDs (light-emitting diodes), which are light sources that are often used to add accent lighting to computer builds.</td>
                 </tr>
             </tbody>
         </table>

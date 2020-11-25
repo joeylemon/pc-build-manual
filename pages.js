@@ -25,7 +25,8 @@ class Page {
 const pages = [
     new Page("Home", [
         "Introduction",
-        "Table of Contents"
+        "Table of Contents",
+        "Terms"
     ]),
     new Page("Computer Parts", [
         "Introduction",

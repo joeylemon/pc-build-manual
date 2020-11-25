@@ -10,7 +10,7 @@ $(document).ready(function () {
         const hash = window.location.hash.replace('#', '')
         if (hash.length > 2) return;
         
-        $(`#${hash}`).css({backgroundColor: "yellow"})
+        $(`#${hash}`).css({backgroundColor: "#feffb2"})
     }
 
     // If on home page, highlight given definition in URL
@@ -18,7 +18,7 @@ $(document).ready(function () {
         const hash = window.location.hash.replace('#', '')
         if (!hash.includes("def")) return;
         
-        $(`#${hash}`).css({backgroundColor: "#ffff0066"})
+        $(`#${hash}`).css({backgroundColor: "#feffb2"})
     }
 
     // Calculate word count and set text at bottom of page
