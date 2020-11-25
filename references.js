@@ -3,7 +3,11 @@ const references = {
 
     "Kuck": `D. J. Kuck, <i>The structure of computer and computations</i>. New York: Wiley, 1978.`,
 
+    "Soper": `M. E. Soper, “RAM Types and Features,” <i>Pearson IT Certification</i>, 19-Nov-2016. [Online]. Available: https://www.pearsonitcertification.com/articles/article.aspx?p=2738309.`,
+
     "LEI": `L. E. I. Technology, “Types of Motherboard Form Factors,” <i>Lanner</i>, 19-Mar-2020. [Online]. Available: https://www.lanner-america.com/blog/types-motherboard-form-factors/. `,
+
+    "Harding": `S. Harding, “What Is an M.2 SSD? A Basic Definition,” <i>Tom's Hardware</i>, 24-Jan-2020. [Online]. Available: https://www.tomshardware.com/reviews/glossary-m2-definition,5887.html.`,
 
     "Hirsch": `R. Hirsch, <i>Exploring colour photography: a complete guide</i>. London: Laurence King, 2005.`,
 

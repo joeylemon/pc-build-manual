@@ -152,7 +152,7 @@
             <p class="caption">A clip showing how to install storage <%- ref("MSI") %></p>
         </div>
         <p>
-            Installing your storage device(s) is very straightforward. Every case comes with standard removable holders for both hard disk drives (HDDs) and solid state drives (SSDs). There are also ways to install an SSD elsewhere, but these instructions will put both types of storage into the removable holders.
+            Installing your storage device(s) is very straightforward. Every case comes with standard removable holders for both hard disk drives (<%- def("storage", "HDDs") %>) and solid state drives (<%- def("storage", "SSDs") %>). There are also ways to install an <%- def("storage", "SSD") %> elsewhere, but these instructions will put both types of storage into the removable holders.
         </p>
         <ol>
             <li>Remove a disk drive holder from the case by pinching the two extrusions inwards until it comes loose.</li>
