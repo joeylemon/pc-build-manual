@@ -1,5 +1,6 @@
+// Reference a text in HTML with <%- ref("ESA") %>
 const references = {
-    "ESA": `"2019 Essential Facts About the Computer and Video Game Industry.” <i>Entertainment Software Association</i>, Entertainment Software Association, 19 Aug. 2019, www.theesa.com/esa-research/2019-essential-facts-about-the-computer-and-video-gameindustry/.`,
+    "ESA": `"2019 Essential Facts About the Computer and Video Game Industry.” <i>Entertainment Software Association</i>, Entertainment Software Association, 19 Aug. 2019, Available: https://www.theesa.com/esa-research/2019-essential-facts-about-the-computer-and-video-game-industry/.`,
 
     "Kuck": `D. J. Kuck, <i>The structure of computer and computations</i>. New York: Wiley, 1978.`,
 
@@ -13,7 +14,7 @@ const references = {
 
     "Newegg": `“Newegg – Shopping Upgraded,” Newegg.com. [Online]. Available: https://newegg.com/.`,
 
-    "LTT": `<i>ULTIMATE Cable Management Guide</i>. Linus Tech Tips, 2018.`,
+    "LTT": `<i>ULTIMATE Cable Management Guide</i>. Linus Tech Tips, 2018. Available: https://www.youtube.com/watch?v=HkB-GNEt9Fk.`,
 
     "B. Hale": `B. Hale, “How to Cable Manage A PC: 27 Examples of Good Cable Management,” <i>Tech Guided</i>, 13-Aug-2019. [Online]. Available: https://techguided.com/good-cable-management/.`,
 
@@ -21,9 +22,13 @@ const references = {
 
     "A. E. Freedman": `A. E. Freedman, “How to Build a PC,” <i>Tom's Hardware</i>, 26-Aug-2020. [Online]. Available: https://www.tomshardware.com/reviews/how-to-build-a-pc,5867.html.`,
 
-    "MSI": `<i>PC Build Tutorial (Full Version) | MSI</i>. MSI Gaming, 2017.`,
+    "MSI": `<i>PC Build Tutorial (Full Version) | MSI</i>. MSI Gaming, 2017. Available: https://www.youtube.com/watch?v=qCPIEYfN_hc.`,
 
     "Cutress": `D. I. Cutress and G. Bonshor, “Overclocking The AMD Ryzen APUs: Guide and Results," 16-Apr-2018. [Online]. Available: https://www.anandtech.com/show/12542/overclocking-the-amd-ryzen-apus-guide-results/4.`
 }
+
+// Replace links with appropriate HTML tags
+for (const key of Object.keys(references))
+    references[key] = references[key].replace(/Available: (.*)\./, `Test: <a href="$1" target="_blank">$1</a>`)
 
 module.exports = references

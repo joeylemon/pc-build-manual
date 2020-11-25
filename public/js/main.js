@@ -5,24 +5,18 @@ $(document).ready(function () {
         $('#sidebar').toggleClass('active')
     })
 
-    // If on references page, highlight given reference in URL
-    if (window.location.href.includes("references") && window.location.hash) {
-        const hash = window.location.hash.replace('#', '')
-        if (hash.length > 2) return;
-        
-        $(`#${hash}`).css({backgroundColor: "#feffb2"})
-    }
-
-    // If on home page, highlight given definition in URL
-    if (window.location.href.includes("home") && window.location.hash) {
-        const hash = window.location.hash.replace('#', '')
-        if (!hash.includes("def")) return;
-        
-        $(`#${hash}`).css({backgroundColor: "#feffb2"})
-    }
-
     // Calculate word count and set text at bottom of page
     $('#word-count').html(getWordCount())
+
+    // If on references or home page, highlight given reference or definition
+    if (window.location.hash) {
+        const hash = window.location.hash.replace('#', '')
+
+        if ((window.location.href.includes("references") && hash.length <= 2) ||
+            (window.location.href.includes("home") && hash.startsWith("def-"))) {
+            $(`#${hash}`).css({ backgroundColor: "#feffb2" })
+        }
+    }
 
 })
 

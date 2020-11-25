@@ -33,6 +33,10 @@ h1, h2, p, li {
     width: 150px;
 }
 
+#works-cited a {
+    text-decoration: underline;
+}
+
 a,
 a:hover,
 a:focus {
