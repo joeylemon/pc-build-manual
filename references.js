@@ -29,6 +29,6 @@ const references = {
 
 // Replace links with appropriate HTML tags
 for (const key of Object.keys(references))
-    references[key] = references[key].replace(/Available: (.*)\./, `Test: <a href="$1" target="_blank">$1</a>`)
+    references[key] = references[key].replace(/Available: (.*)\./, `Available: <a href="$1" target="_blank">$1</a>`)
 
 module.exports = references
