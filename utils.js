@@ -1,4 +1,9 @@
 module.exports = {
+    sleep: ms => {
+        return new Promise(resolve => {
+            setTimeout(resolve, ms)
+        })
+    },
     toTitle: str => {
         return str.replace(
             /\w\S*/g,
