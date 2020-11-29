@@ -13,25 +13,65 @@ function getWordCount() {
 }
 
 /**
+ * Load the latest part prices from pcbuilder.net and update the HTML
+ * @param {String} range The price range to refresh (e.g. 500, 1000, etc)
+ */
+function refreshPrices(range) {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: `prices/refresh/${range}`,
+            success: (resp) => {
+                updatePriceHTML(range, resp)
+                resolve()
+            },
+            error: (xhr, err) => {
+                console.error(xhr.status, "could not get prices")
+                reject()
+            }
+        })
+    })
+}
+
+/**
+ * Load the last saved prices and update the HTML
+ */
+function loadSavedPrices() {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: `prices/saved`,
+            success: (resp) => {
+                for (const range of Object.keys(resp))
+                    updatePriceHTML(range, resp[range])
+                resolve()
+            },
+            error: (xhr, err) => {
+                console.error(xhr.status, "could not get prices")
+                reject()
+            }
+        })
+    })
+}
+
+/**
  * Update the prices for a build's HMTL
  * @param {String} range The price range to update (e.g. 500, 1000, etc)
- * @param {Object} obj The build object containing prices, last updated time, and the build url
+ * @param {Object} build The build object containing prices, last updated time, and the build url
  */
-function updatePrices(range, obj) {
+function updatePriceHTML(range, build) {
     let sum = 0
-    for (const component of Object.keys(obj.prices)) {
-        const price = obj.prices[component]
+    for (const component of Object.keys(build.prices)) {
+        const price = build.prices[component]
         sum += price
         $(`#${range}-${component}-price`).html("$" + price)
     }
     $(`#${range}-total-price`).html("$" + sum.toFixed(2))
-    $(`#${range}-last-updated`).html(`Prices last updated ${moment(obj.lastUpdated).fromNow()}.`)
+    $(`#${range}-last-updated`).html(`Prices last updated ${moment(build.lastUpdated).fromNow()}.`)
 
     if (priceUpdateTasks[range])
         clearInterval(priceUpdateTasks[range])
 
     priceUpdateTasks[range] = setInterval(() => {
-        $(`#${range}-last-updated`).html(`Prices last updated ${moment(obj.lastUpdated).fromNow()}.`)
+        $(`#${range}-last-updated`).html(`Prices last updated ${moment(build.lastUpdated).fromNow()}.`)
     }, 30000)
 }
 
@@ -56,36 +96,16 @@ $(document).ready(function () {
     }
 
     // Retrieve saved part prices when looking at part lists
-    if (window.location.href.includes("choosing-parts")) {
-        $.ajax({
-            url: `prices/saved`,
-            success: (resp) => {
-                for (const range of Object.keys(resp))
-                    updatePrices(range, resp[range])
-            },
-            error: (xhr, err) => {
-                console.error(xhr.status, "could not get prices")
-            }
-        })
-    }
+    if (window.location.href.includes("choosing-parts"))
+        loadSavedPrices()
 
     // Refreshes part prices when user clicks button
     $("[id$=-refresh]").on('click', function () {
-        const range = $(this).attr("id").split("-")[0]
+        const $elem = $(this)
+        const range = $elem.attr("id").split("-")[0]
 
-        $(this).prop("disabled", true)
-
-        $.ajax({
-            url: `prices/refresh/${range}`,
-            success: (resp) => {
-                updatePrices(range, resp)
-                $(this).prop("disabled", false)
-            },
-            error: (xhr, err) => {
-                console.error(xhr.status, "could not get prices")
-                $(this).prop("disabled", false)
-            }
-        })
+        $elem.prop("disabled", true)
+        refreshPrices(range).finally(() => $elem.prop("disabled", false))
     })
 
 })
