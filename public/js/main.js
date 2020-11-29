@@ -1,3 +1,6 @@
+// Holds task numbers for price last updated times
+let priceUpdateTasks = {}
+
 /**
  * Loop through text elements and sum the total word count on the current page
  */
@@ -23,6 +26,13 @@ function updatePrices(range, obj) {
     }
     $(`#${range}-total-price`).html("$" + sum.toFixed(2))
     $(`#${range}-last-updated`).html(`Prices last updated ${moment(obj.lastUpdated).fromNow()}.`)
+
+    if (priceUpdateTasks[range])
+        clearInterval(priceUpdateTasks[range])
+
+    priceUpdateTasks[range] = setInterval(() => {
+        $(`#${range}-last-updated`).html(`Prices last updated ${moment(obj.lastUpdated).fromNow()}.`)
+    }, 30000)
 }
 
 $(document).ready(function () {

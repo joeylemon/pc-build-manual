@@ -3,16 +3,17 @@ const fs = require("fs")
 const builds = require("./builds.js")
 const getParts = require("./scraper.js")
 
+const FILE_NAME = "./prices/prices.json"
 const router = express.Router()
 
 /**
  * Get the saved prices in the local json file
  */
 function getSavedPrices() {
-    if (!fs.existsSync("prices.json"))
+    if (!fs.existsSync(FILE_NAME))
         return builds
 
-    return JSON.parse(fs.readFileSync("prices.json"))
+    return JSON.parse(fs.readFileSync(FILE_NAME))
 }
 
 /**
@@ -21,14 +22,14 @@ function getSavedPrices() {
  * @param {Object} build The build object from builds.js
  */
 function savePrices(range, build) {
-    if (!fs.existsSync("prices.json")) {
-        fs.writeFileSync("prices.json", "{}")
+    if (!fs.existsSync(FILE_NAME)) {
+        fs.writeFileSync(FILE_NAME, "{}")
     }
 
-    const prices = JSON.parse(fs.readFileSync("prices.json"))
+    const prices = JSON.parse(fs.readFileSync(FILE_NAME))
     build.lastUpdated = Date.now()
     prices[range] = build
-    fs.writeFileSync("prices.json", JSON.stringify(prices))
+    fs.writeFileSync(FILE_NAME, JSON.stringify(prices))
 }
 
 router.get('/saved', async (req, res) => {
