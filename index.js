@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const fs = require('fs')
+const priceEndpoint = require("./prices/prices.js")
 const { toTitle } = require("./utils.js")
 const { pages, getNextPage, getLastPage } = require('./pages.js')
 const references = require("./references.js")
@@ -61,6 +62,11 @@ app.locals.pgName = path => {
     const name = path.split("/")[1].replace(/-/g, " ")
     return toTitle(name)
 }
+
+/**
+ * Set up price endpoint
+ */
+app.use("/prices", priceEndpoint)
 
 /**
  * Render the home page

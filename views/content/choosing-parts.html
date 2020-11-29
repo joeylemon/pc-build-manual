@@ -8,7 +8,7 @@
             money while still having an enjoyable experience, a lower budget such as $500 is definitely doable. On the
             other hand, if you have money to spare and would really enjoy an extremely high-performance machine, a
             budget like $1,500 or $2,000 will give you exactly what you want.</p>
-        <p class="caption">All images, prices, and features are referenced from Newegg.com <%- ref("Newegg") %>. These prices are accurate as of December 2, 2020.</p>
+        <p class="caption">All images, prices, and features are referenced from Newegg.com <%- ref("Newegg") %>.</p>
     </div>
 </div>
 
@@ -27,6 +27,10 @@
             <li>3D modeling in Blender or similar applications </li>
             <li>Training simple neural networks </li>
         </ul>
+        <div class="d-flex align-items-end justify-content-end" style="margin-bottom: 15px;">
+            <span id="500-last-updated" class="caption" style="margin-right: 10px;"></span>
+            <button id="500-refresh" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i></button>
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -47,7 +51,7 @@
                         </div>
                     </td>
                     <td>Our <%- def("CPU") %> of choice is the Intel Core i3-9100F. It is technically more than one generation behind, but it can still deliver very reasonable performance for only about $75.</td>
-                    <td>$75</td>
+                    <td id="500-CPU-price">$75</td>
                 </tr>
                 <tr>
                     <td>Motherboard</td>
@@ -59,7 +63,7 @@
                         </div>
                     </td>
                     <td>In this price bracket, <%- def("form factor", "mATX") %> motherboards are a common choice. While they may not be the best for further upgrades, their low price is unbeatable. This is why we have selected the MSI B365M PRO-VDH Micro ATX LGA1151 Motherboard. Even though this board is of the <%- def("form factor", "mATX") %> form factor, we find that it punches well above its weight by including 4 <%- def("RAM", "DDR4") %> <%- def("RAM", "DIMM") %> slots. This means there is a cheap and easy upgrade path for those looking to add more <%- def("RAM") %> at a later date. The MSI B365M PRO-VDH also includes six whole <%- def("SATA") %> ports, a must for those interested in adding more storage down the line. We find that all of this is an absolute steal at only $70.</td>
-                    <td>$70</td>
+                    <td id="500-Motherboard-price">$70</td>
                 </tr>
                 <tr>
                     <td>Memory</td>
@@ -70,8 +74,8 @@
                             </a>
                         </div>
                     </td>
-                    <td>For this build, and most machines, <%- def("capacity", "16 GB") %> of <%- def("RAM", "DDR4") %> memory should be more than sufficient. The best priced memory as of now that satisfies this requirement is the Team Elite Plus <%- def("capacity", "16 GB") %>, available for only about $50 </td>
-                    <td>$50</td>
+                    <td>For this build, and most machines, <%- def("capacity", "16 GB") %> of <%- def("RAM", "DDR4") %> memory should be more than sufficient. The best priced memory as of now that satisfies this requirement is the Team Elite Plus <%- def("capacity", "16 GB") %>, available for only about $50.</td>
+                    <td id="500-Memory-price">$50</td>
                 </tr>
                 <tr>
                     <td>Storage</td>
@@ -83,7 +87,7 @@
                         </div>
                     </td>
                     <td>In this price range, the best storage option is almost always to get a sufficiently sized <%- def("storage", "SSD") %> to boot off of. About 500 gigabytes should do the trick. When that inevitably fills up, upgrading to a large mechanical hard drive is always a very easy and economical way to achieve a few extra bytes. Right now the <%- def("storage", "SSD") %> of choice is the ADATA SU635 <%- def("capacity", "480 GB") %> 2.5" Solid State Drive.</td>
-                    <td>$45</td>
+                    <td id="500-Storage-price">$45</td>
                 </tr>
                 <tr>
                     <td>GPU</td>
@@ -95,7 +99,7 @@
                         </div>
                     </td>
                     <td>In this price range it’s hard to go wrong with the AMD Radeon RX 570, a tried and true card on AMD’s lineup that has a lot of graphical compute for a low price, which is why we recommend it for this build.</td>
-                    <td>$150</td>
+                    <td id="500-GPU-price">$150</td>
                 </tr>
                 <tr>
                     <td>Case</td>
@@ -107,7 +111,7 @@
                         </div>
                     </td>
                     <td>We have decided to go with the Cooler Master MasterBox Q300L which is an <%- def("form factor", "mATX") %> tower case with 2x front panel USB 3.0 Gen 1 ports and fits full-size graphics cards without issue. It provides several cable management holes and a couple patterned magnetic dust filters for easy removal and cleaning. Although the case is on the small side, we think that it should be perfectly adequate for most upgrades you may decide to do further down the line.</td>
-                    <td>$45</td>
+                    <td id="500-Case-price">$45</td>
                 </tr>
                 <tr>
                     <td>PSU</td>
@@ -119,10 +123,10 @@
                         </div>
                     </td>
                     <td>We always recommend at least an 80+ bronze efficient unit for all of your builds, as efficient power is a good way to keep all of your components safe and healthy. With all of the extra money we’ve saved earlier in this build, we’re opting to go for a power supply capable of delivering up to 450W of DC power, this means that it will be able to run your computer today, and if you decide to upgrade a graphics card of CPU down the line, this power supply will be able to keep up with that too. The Corsair CXM 450 W 80+ Bronze Certified ATX Power Supply is what we’ve chosen and it will only cost you $70.</td>
-                    <td>$70</td>
+                    <td id="500-PSU-price">$70</td>
                 </tr>
                 <tr style="text-align: right;">
-                    <td colspan="4"><strong>Total:</strong> $505</td>
+                    <td colspan="4"><strong>Total:</strong> <span id="500-total-price">$505</span></td>
                 </tr>
             </tbody>
         </table>
@@ -147,7 +151,11 @@
             <li>Scientific computing, such as running machine learning models or neural networks </li>
             <li>Cryptocurrency mining </li>
         </ul>
-        <p>Assuming the primary goal is to play video games (as well as typical computer use such as browsing, streaming, editing documents, etc.), the following build fits well within this price range and gives excellent performance with some of the latest technology. </p>
+        <p>Assuming the primary goal is to play video games (as well as typical computer use such as browsing, streaming, editing documents, etc.), the following build fits well within this price range and gives excellent performance with some of the latest technology.</p>
+        <div class="d-flex align-items-end justify-content-end" style="margin-bottom: 15px;">
+            <span id="1000-last-updated" class="caption" style="margin-right: 10px;"></span>
+            <button id="1000-refresh" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i></button>
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -168,7 +176,7 @@
                         </div>
                     </td>
                     <td>The recommended <%- def("CPU") %> is an Intel i5-10600K at $265. It was just released in April of 2020 and it utilizes Intel’s latest Comet Lake technology. It has 6 cores and 12 threads, which is ideal especially for updated games that make use of multicore technology. It is overclockable and it doesn’t come with a stock cooler, making it a good choice for gaming since we can fine-tune its performance with <%- def("aftermarket") %> cooling. </td>
-                    <td>$265</td>
+                    <td id="1000-CPU-price">$265</td>
                 </tr>
                 <tr>
                     <td>CPU Cooler</td>
@@ -180,7 +188,7 @@
                         </div>
                     </td>
                     <td>Since our CPU comes without a cooler, we choose the ARTIC Freezer 34 eSports cooler at $40. It allows us a bit of wiggle room with overclocking while being decently silent. It also comes in a wide range of colors, allowing us to potentially create a color scheme with the build. </td>
-                    <td>$40</td>
+                    <td id="1000-Cooler-price">$40</td>
                 </tr>
                 <tr>
                     <td>Motherboard</td>
@@ -192,7 +200,7 @@
                         </div>
                     </td>
                     <td>The recommended motherboard is the ASRock Z490 Phantom Gaming 4 at $130. It features a Z490 chipset which allows overclocking. It also has 4 <%- def("RAM", "DDR4") %> <%- def("RAM", "DIMM") %> slots that lets gives us lots of room for <%- def("RAM") %>. </td>
-                    <td>$130</td>
+                    <td id="1000-Motherboard-price">$130</td>
                 </tr>
                 <tr>
                     <td>Memory</td>
@@ -204,7 +212,7 @@
                         </div>
                     </td>
                     <td>For this build, and most machines, <%- def("capacity", "16 GB") %> of <%- def("RAM", "DDR4") %> memory should be more than sufficient. The best priced memory as of now that satisfies this requirement is the Team Elite Plus <%- def("capacity", "16 GB") %>, available for only about $50 </td>
-                    <td>$50</td>
+                    <td id="1000-Memory-price">$50</td>
                 </tr>
                 <tr>
                     <td>Storage</td>
@@ -216,7 +224,7 @@
                         </div>
                     </td>
                     <td>Modern computers need at least <%- def("capacity", "1 TB") %> of storage, and since we have money to spare, we will choose a <%- def("capacity", "1 TB") %> <%- def("storage", "M.2 SSD") %> which will deliver extreme disk speeds at $95.</td>
-                    <td>$95</td>
+                    <td id="1000-Storage-price">$95</td>
                 </tr>
                 <tr>
                     <td>GPU</td>
@@ -228,7 +236,7 @@
                         </div>
                     </td>
                     <td>The recommended <%- def("GPU") %> is the GeForce RTX 3070. It is the newest part of the build, having been released on October 29 of 2020. Obviously featuring Nvidia’s latest innovations, it is an amazing choice at its price of $499. It will easily handle any modern game and will reach <%- def("resolution", "1440p") %> at 60 fps in most cases. </td>
-                    <td>$499</td>
+                    <td id="1000-GPU-price">$499</td>
                 </tr>
                 <tr>
                     <td>Case</td>
@@ -240,7 +248,7 @@
                         </div>
                     </td>
                     <td>The recommended case is the Cooler Master MasterBox TD500 Mesh at $100. It has a clean design and a large side window to view the inside of the build. It has a mesh front panel with excellent airflow and a helpful amount of cable management features. </td>
-                    <td>$100</td>
+                    <td id="1000-Case-price">$100</td>
                 </tr>
                 <tr>
                     <td>PSU</td>
@@ -252,10 +260,10 @@
                         </div>
                     </td>
                     <td>This build will require at least a 650W power supply, preferably modular, which costs around $100.</td>
-                    <td>$100</td>
+                    <td id="1000-PSU-price">$100</td>
                 </tr>
                 <tr style="text-align: right;">
-                    <td colspan="4"><strong>Total:</strong> $1,279</td>
+                    <td colspan="4"><strong>Total:</strong> <span id="1000-total-price">$1,279</span></td>
                 </tr>
             </tbody>
         </table>
@@ -273,6 +281,10 @@
             <li>Playing the latest games at <%- def("resolution", "1440p") %> with high frames per second</li>
         </ul>
         <p>With this price range, your goal can be whatever you want it to be. This build can accommodate to your needs where you need them. </p>
+        <div class="d-flex align-items-end justify-content-end" style="margin-bottom: 15px;">
+            <span id="1500-last-updated" class="caption" style="margin-right: 10px;"></span>
+            <button id="1500-refresh" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i></button>
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -293,7 +305,7 @@
                         </div>
                     </td>
                     <td>The recommended <%- def("CPU") %> for this build is an AMD Ryzen 9 3900X at $425. This <%- def("CPU") %> has 12 cores and 24 threads, which is ideal for users who are doing animation or video rendering, as it renders and loads super-fast. This <%- def("CPU") %> has a high clock speed and it is one of the top of the line <%- def("CPU") %>s on the market. </td>
-                    <td>$425</td>
+                    <td id="1500-CPU-price">$425</td>
                 </tr>
                 <tr>
                     <td>CPU Cooler</td>
@@ -305,7 +317,7 @@
                         </div>
                     </td>
                     <td>Since our <%- def("CPU") %> does not come with a cooler on its own, we can pick up the Cooler Master Hyper 212 EVO at $35. This cooler has high ratings, and can keep the <%- def("CPU") %> reasonably cool at a decent volume. And it is very price advantangeous compared to other coolers.</td>
-                    <td>$35</td>
+                    <td id="1500-Cooler-price">$35</td>
                 </tr>
                 <tr>
                     <td>Motherboard</td>
@@ -317,7 +329,7 @@
                         </div>
                     </td>
                     <td>The recommended motherboard will be the Asus ROG Strix X570-E Gaming ATX AM4 at $300. This motherboard has a built-in wireless/Bluetooth receiver built into the board itself if the user chooses not to do an ethernet connection. It also has <%- def("RAM", "DDR4") %> memory type and can hold up to <%- def("capacity", "128 GB") %> of memory. </td>
-                    <td>$300</td>
+                    <td id="1500-Motherboard-price">$300</td>
                 </tr>
                 <tr>
                     <td>Memory</td>
@@ -329,7 +341,7 @@
                         </div>
                     </td>
                     <td>The recommended <%- def("RAM") %> for this build is the G.Skill Ripjaws V Series <%- def("RAM", "DDR4-3200") %> at $116. This <%- def("RAM") %> package includes two <%- def("capacity", "16 GB") %> sticks of memory at a cheap price. </td>
-                    <td>$116</td>
+                    <td id="1500-Memory-price">$116</td>
                 </tr>
                 <tr>
                     <td>Storage</td>
@@ -341,7 +353,7 @@
                         </div>
                     </td>
                     <td>For storage, this computer is going to use a <%- def("capacity", "1 TB") %> <%- def("storage", "M.2 SSD") %>. If you’re willing to spend a little more money you could get a <%- def("capacity", "250 GB") %> <%- def("storage", "SSD") %> external drive which would allow you to put your OS on a drive separately from all your other apps and information. </td>
-                    <td>$95</td>
+                    <td id="1500-Storage-price">$95</td>
                 </tr>
                 <tr>
                     <td>GPU</td>
@@ -353,7 +365,7 @@
                         </div>
                     </td>
                     <td>The recommended <%- def("GPU") %> is going to be the GeForce RTX 3080 at $699. With this part releasing just with the past month, it is with out a doubt the top of the line, where now it outperforms its previous versions at a much cheaper cost. This <%- def("GPU") %> will be able to handle anything you throw at it, from gaming to rendering videos. </td>
-                    <td>$699</td>
+                    <td id="1500-GPU-price">$699</td>
                 </tr>
                 <tr>
                     <td>Case</td>
@@ -365,7 +377,7 @@
                         </div>
                     </td>
                     <td>The recommended case is the Lian Li PC-O11 Dynamic ATX Full Tower Case at $140. This case is easy for a first timer to set up and has a nice look to it with having glass windows on both sides. This case has bottom intake fans, fans for our <%- def("GPU") %>, and rear vertical fans which gives it a nice airflow and making it relatively quiet. </td>
-                    <td>$140</td>
+                    <td id="1500-Case-price">$140</td>
                 </tr>
                 <tr>
                     <td>PSU</td>
@@ -377,10 +389,10 @@
                         </div>
                     </td>
                     <td>This build will require at least a 650W power supply, preferably modular, which costs around $100.</td>
-                    <td>$100</td>
+                    <td id="1500-PSU-price">$100</td>
                 </tr>
                 <tr style="text-align: right;">
-                    <td colspan="4"><strong>Total:</strong> $1,910</td>
+                    <td colspan="4"><strong>Total:</strong> <span id="1500-total-price">$1,910</span></td>
                 </tr>
             </tbody>
         </table>
@@ -404,6 +416,10 @@
             <li>Streaming and gaming at the same time without dropping frames or quality. </li>
         </ul>
         <p>The following build costs roughly $2,299 and gives excellent performance with plenty of room for upgrades. The build will be high performing for many years. </p>
+        <div class="d-flex align-items-end justify-content-end" style="margin-bottom: 15px;">
+            <span id="2000-last-updated" class="caption" style="margin-right: 10px;"></span>
+            <button id="2000-refresh" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i></button>
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -424,7 +440,7 @@
                         </div>
                     </td>
                     <td>With a $2,000 budget, the recommended <%- def("CPU") %> is the Intel Core i9-10900KF at $600. While this is a solid 10 core, <%- def("clock speed", "3.7 GHz") %> <%- def("CPU") %>, the real killer is its boosted <%- def("clock speed", "5.3 GHz") %> performance. The lack of a CPU cooler allows the user to save space and invest in higher-end cooling. </td>
-                    <td>$600</td>
+                    <td id="2000-CPU-price">$600</td>
                 </tr>
                 <tr>
                     <td>CPU Cooler</td>
@@ -436,7 +452,7 @@
                         </div>
                     </td>
                     <td>The cooler we chose for our high-end build is the Noctua NH-D15 CHROMAX.BLACK 82.52 CFM CPU Cooler. This cooler is nearly silent and can handle the planned overclocking of the <%- def("CPU") %>. It costs $160, and it enables the <%- def("CPU") %> to perform to its maximum for long periods of time. This cooler can also handle even better <%- def("CPU") %>s if the computer is ever upgraded. </td>
-                    <td>$160</td>
+                    <td id="2000-Cooler-price">$160</td>
                 </tr>
                 <tr>
                     <td>Motherboard</td>
@@ -448,7 +464,7 @@
                         </div>
                     </td>
                     <td>The recommended motherboard that supports the entire build and leaves space for upgrading in the future is the MSI MPG Z490 ATX LGA 1200. It comes in at $200, supports overclocking, and has 4 <%- def("RAM", "DDR4") %> slots to push this machine to its fullest potential. It supports WIFI 6 which outclasses most ISPs’ offered speeds. </td>
-                    <td>$200</td>
+                    <td id="2000-Motherboard-price">$200</td>
                 </tr>
                 <tr>
                     <td>Memory</td>
@@ -460,7 +476,7 @@
                         </div>
                     </td>
                     <td>2x8GB of <%- def("RAM", "DDR4-3600") %> <%- def("RAM") %> is highly recommended for this build. It has the high speed and can be upgraded to <%- def("capacity", "32 GB") %> if ever necessary. With that, we recommend the G.Skill Ripjaws V <%- def("capacity", "16 GB") %> (2 x 8 GB) <%- def("RAM", "DDR4-3600") %> CL16 Memory at $80. </td>
-                    <td>$80</td>
+                    <td id="2000-Memory-price">$80</td>
                 </tr>
                 <tr>
                     <td>Storage</td>
@@ -472,7 +488,7 @@
                         </div>
                     </td>
                     <td>The $2000 budget allows us to pursue a <%- def("capacity", "2 TB") %> <%- def("storage", "SSD") %>. You can get a separate hard drive if you need more space, but the Samsung 860 Evo provides enough space and really increases the speed of the build. It comes in at $250 dollars, but Samsung promises a long-lasting product that will never really need to be upgraded.  </td>
-                    <td>$250</td>
+                    <td id="2000-Storage-price">$250</td>
                 </tr>
                 <tr>
                     <td>GPU</td>
@@ -484,7 +500,7 @@
                         </div>
                     </td>
                     <td>The recommended <%- def("GPU") %> is the GeForce RTX 3080 at $699. It will easily handle any modern game and will reach 2k at 144fps without even needing to overclock it. It is 328mm long, which requires a larger case, but it has no temperature problems, and it has very quiet fans.</td>
-                    <td>$699</td>
+                    <td id="2000-GPU-price">$699</td>
                 </tr>
                 <tr>
                     <td>Case</td>
@@ -496,7 +512,7 @@
                         </div>
                     </td>
                     <td>The recommended case is the Corsair 760T ATX Full Tower at $190. It has the space necessary to be considered a lifetime case. It is a quality case that can handle upgrades for decades to come. The case is easy to open, has great airflow, and has quiet and replaceable case fans. The case comes with a side pocket for cable management and has plenty of expansion slots for future upgrades. </td>
-                    <td>$190</td>
+                    <td id="2000-Case-price">$190</td>
                 </tr>
                 <tr>
                     <td>PSU</td>
@@ -508,10 +524,10 @@
                         </div>
                     </td>
                     <td>This behemoth of a build requires at least 600 Watts of power, but with upgrades in mind, we recommend the Corsair RM 750 W Fully Modular power supply at $120. </td>
-                    <td>$120</td>
+                    <td id="2000-PSU-price">$120</td>
                 </tr>
                 <tr style="text-align: right;">
-                    <td colspan="4"><strong>Total:</strong> $2,299</td>
+                    <td colspan="4"><strong>Total:</strong> <span id="2000-total-price">$2,299</span></td>
                 </tr>
             </tbody>
         </table>
