@@ -1,10 +1,13 @@
 const express = require('express')
-const app = express()
+const cookieParser = require('cookie-parser')
 const fs = require('fs')
 const priceEndpoint = require("./prices/prices.js")
 const { toTitle } = require("./utils.js")
 const { pages, getNextPage, getLastPage } = require('./pages.js')
 const references = require("./references.js")
+
+const app = express()
+app.use(cookieParser())
 
 /**
  * Render an error alert at the top of the home page
@@ -17,7 +20,8 @@ function renderError(res, msg) {
         error: msg,
         pages: pages,
         lastPage: getLastPage("home"),
-        nextPage: getNextPage("home")
+        nextPage: getNextPage("home"),
+        cookies: req.cookies
     })
 }
 
@@ -25,13 +29,14 @@ function renderError(res, msg) {
  * Retrieve the variable dictionary to provide to EJS for the page
  * @param {String} page The name of the page
  */
-function getPageVariables(page) {
+function getPageVariables(req, page) {
     return {
         page: `content/${page}`,
         pages: pages,
         lastPage: getLastPage(page),
         nextPage: getNextPage(page),
-        references: references
+        references: references,
+        cookies: req.cookies
     }
 }
 
@@ -72,7 +77,7 @@ app.use("/prices", priceEndpoint)
  * Render the home page
  */
 app.get('/', function (req, res) {
-    res.render('index', getPageVariables("home"))
+    res.render('index', getPageVariables(req, "home"))
 })
 
 /**
@@ -82,7 +87,7 @@ app.get('/:page', function (req, res) {
     if (!fs.existsSync(`./views/content/${req.params.page}.html`))
         return renderError(res, "The requested URL does not exist.")
 
-    res.render('index', getPageVariables(req.params.page))
+    res.render('index', getPageVariables(req, req.params.page))
 })
 
 app.listen(6077)

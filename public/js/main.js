@@ -2,6 +2,19 @@
 let priceUpdateTasks = {}
 
 /**
+ * Open or close the sidebar navigation
+ * @param {Boolean} open Whether or not to open the sidebar
+ */
+function setSidebarOpened(open) {
+    document.cookie = `sidebar=${!open}`
+    if (open && !$("#sidebar").hasClass("active")) {
+        $("#sidebar").addClass("active")
+    } else if(!open && $("#sidebar").hasClass("active")) {
+        $("#sidebar").removeClass("active")
+    }
+}
+
+/**
  * Loop through text elements and sum the total word count on the current page
  */
 function getWordCount() {
@@ -79,7 +92,7 @@ $(document).ready(function () {
 
     // Collapse or expand the sidebar when the hamburger button is clicked
     $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active')
+        setSidebarOpened(!$('#sidebar').hasClass("active"))
     })
 
     // Calculate word count and set text at bottom of page
