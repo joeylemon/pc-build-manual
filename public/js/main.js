@@ -62,7 +62,7 @@ function updatePriceHTML(range, build) {
     for (const component of Object.keys(build.prices)) {
         const price = build.prices[component]
         sum += price
-        $(`#${range}-${component}-price`).html("$" + price)
+        $(`#${range}-${component.toLowerCase()}-price`).html("$" + price)
     }
     $(`#${range}-total-price`).html("$" + sum.toFixed(2))
     $(`#${range}-last-updated`).html(`Prices last updated ${moment(build.lastUpdated).fromNow()}.`)
@@ -104,8 +104,16 @@ $(document).ready(function () {
         const $elem = $(this)
         const range = $elem.attr("id").split("-")[0]
 
+        $elem.find("svg").addClass("spinning")
+
+        // Set all prices to ellipses
+        $(`[id^=${range}-][id$=-price]`).html("...")
         $elem.prop("disabled", true)
-        refreshPrices(range).finally(() => $elem.prop("disabled", false))
+
+        refreshPrices(range).finally(() => {
+            $elem.prop("disabled", false)
+            $elem.find("svg").removeClass("spinning")
+        })
     })
 
 })
