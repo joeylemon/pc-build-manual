@@ -10,34 +10,32 @@ const app = express()
 app.use(cookieParser())
 
 /**
- * Render an error alert at the top of the home page
- * @param {Response} res The express response object
- * @param {String} msg The error to display
+ * Return an HTML file to the response containing the rendered page template
+ * @param {Request} req The request object from express
+ * @param {Response} res The response object from express
+ * @param {String} page The page to render
+ * @param {String} err The error, if any, to include in the page
  */
-function renderError(res, msg) {
+function renderPage(req, res, page, err) {
     res.render('index', {
-        page: `content/home`,
-        error: msg,
-        pages: pages,
-        lastPage: getLastPage("home"),
-        nextPage: getNextPage("home"),
-        cookies: req.cookies
-    })
-}
-
-/**
- * Retrieve the variable dictionary to provide to EJS for the page
- * @param {String} page The name of the page
- */
-function getPageVariables(req, page) {
-    return {
         page: `content/${page}`,
         pages: pages,
         lastPage: getLastPage(page),
         nextPage: getNextPage(page),
         references: references,
-        cookies: req.cookies
-    }
+        cookies: req.cookies,
+        error: err
+    })
+}
+
+/**
+ * Render an error alert at the top of the home page
+ * @param {Request} req The request object from express
+ * @param {Response} res The response object from express
+ * @param {String} msg The error to display
+ */
+function renderError(req, res, msg) {
+    renderPage(req, res, "home", msg)
 }
 
 // Initialize express details
@@ -77,7 +75,7 @@ app.use("/prices", priceEndpoint)
  * Render the home page
  */
 app.get('/', function (req, res) {
-    res.render('index', getPageVariables(req, "home"))
+    renderPage(req, res, "home")
 })
 
 /**
@@ -85,9 +83,9 @@ app.get('/', function (req, res) {
  */
 app.get('/:page', function (req, res) {
     if (!fs.existsSync(`./views/content/${req.params.page}.html`))
-        return renderError(res, "The requested URL does not exist.")
+        return renderError(req, res, `The requested page, ${req.params.page}, does not exist.`)
 
-    res.render('index', getPageVariables(req, req.params.page))
+    renderPage(req, res, req.params.page)
 })
 
 app.listen(6077)
