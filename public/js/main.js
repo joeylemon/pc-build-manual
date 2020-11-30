@@ -62,7 +62,7 @@ function updatePriceHTML(range, build) {
     for (const component of Object.keys(build.prices)) {
         const price = build.prices[component]
         sum += price
-        $(`#${range}-${component.toLowerCase()}-price`).html("$" + price)
+        $(`#${range}-${component.toLowerCase()}-price`).html("$" + price.toFixed(2))
     }
     $(`#${range}-total-price`).html("$" + sum.toFixed(2))
     $(`#${range}-last-updated`).html(`Prices last updated ${moment(build.lastUpdated).fromNow()}.`)
