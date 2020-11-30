@@ -178,6 +178,11 @@ a.article:hover {
     margin-top: 20px;
 }
 
+.price {
+    color: green;
+    font-weight: bold;
+}
+
 .yt-embed {
     text-align: center;
 }
