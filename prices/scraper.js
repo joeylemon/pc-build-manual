@@ -44,16 +44,17 @@ async function getParts(url) {
 
     console.log("scrape parts")
     const parts = await page.evaluate(() => {
-        return Array.from(document.querySelectorAll(".items")).map(e => {
-            const nameDiv = e.querySelector(".comp-details .table_title")
+        return Array.from(document.querySelectorAll(".selectorWrapper")).map(e => {
+            const partDiv = e.querySelector(".selectorName")
+            const nameDiv = e.querySelector(".description")
             const priceDiv = e.querySelector(".price")
-            const priceText = priceDiv ? priceDiv.innerText.replace("$", "") : "-1"
+            const priceText = priceDiv ? priceDiv.innerText.replace("$", "").trim() : "-1"
             return {
-                part: e.querySelector(".component").innerText.replace("Processor", "CPU").replace("Graphics Card", "GPU").replace("Power Supply", "PSU").replace("RAM", "Memory").replace("CPU Cooler", "Cooler"),
+                part: partDiv ? partDiv.innerText.replace("Video Card", "GPU").replace("Power Supply", "PSU").replace("RAM", "Memory").replace("Heatsink", "Cooler").replace("2.5\" SSD", "Storage").replace("M.2 SSD", "Storage") : "",
                 name: nameDiv ? nameDiv.innerText : "",
-                price: parseFloat(priceText) ? parseFloat(priceText) : "-1"
+                price: parseFloat(priceText)
             }
-        }).filter(p => p.name !== "")
+        }).filter(p => p.price > 0)
     })
 
     await page.close()

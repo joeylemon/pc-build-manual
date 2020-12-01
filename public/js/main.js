@@ -39,6 +39,7 @@ function refreshPrices(range) {
             },
             error: (xhr, err) => {
                 console.error(xhr.status, "could not get prices")
+                $(`#${range}-last-updated`).html(`<span style="color: red">There was an error retrieving the prices.</span>`)
                 reject()
             }
         })

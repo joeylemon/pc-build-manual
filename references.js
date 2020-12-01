@@ -14,6 +14,8 @@ const references = {
 
     "Newegg": `“Newegg – Shopping Upgraded,” Newegg.com. [Online]. Available: https://newegg.com/.`,
 
+    "Microcenter": `"Micro Center - Computers and Electronic Device Retailer,” Microcenter.com. [Online]. Available: https://microcenter.com/.`,
+
     "LTT": `<i>ULTIMATE Cable Management Guide</i>. Linus Tech Tips, 2018. Available: https://www.youtube.com/watch?v=HkB-GNEt9Fk.`,
 
     "B. Hale": `B. Hale, “How to Cable Manage A PC: 27 Examples of Good Cable Management,” <i>Tech Guided</i>, 13-Aug-2019. [Online]. Available: https://techguided.com/good-cable-management/.`,
