@@ -26,7 +26,9 @@ const references = {
 
     "MSI": `<i>PC Build Tutorial (Full Version) | MSI</i>. MSI Gaming, 2017. Available: https://www.youtube.com/watch?v=qCPIEYfN_hc.`,
 
-    "Cutress": `D. I. Cutress and G. Bonshor, “Overclocking The AMD Ryzen APUs: Guide and Results," 16-Apr-2018. [Online]. Available: https://www.anandtech.com/show/12542/overclocking-the-amd-ryzen-apus-guide-results/4.`
+    "Cutress": `D. I. Cutress and G. Bonshor, “Overclocking The AMD Ryzen APUs: Guide and Results," 16-Apr-2018. [Online]. Available: https://www.anandtech.com/show/12542/overclocking-the-amd-ryzen-apus-guide-results/4.`,
+
+    "Amazon": `"Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more," Amazon.com. [Online]. Available: https://amazon.com.`
 }
 
 // Replace links with appropriate HTML tags

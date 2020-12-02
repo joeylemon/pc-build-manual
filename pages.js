@@ -59,6 +59,10 @@ const pages = [
         "Introduction",
         "Checklist",
     ]),
+    new Page("Accessories", [
+        "Introduction",
+        "Choosing Accessories",
+    ]),
     new Page("Maintenance", [
         "Introduction",
         "CPU Cooler",
