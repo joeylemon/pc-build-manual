@@ -1,5 +1,4 @@
 const list = {
-    // $500 budget
     "500": {
         buildUrl: "https://www.microcenter.com/site/content/custom-pc-builder.aspx?load=e9a29718-0385-4e98-b12b-37837f052d14",
         lastUpdated: 1606688132955,

@@ -1,3 +1,7 @@
+/**
+ * Simulate a real browser to scrape a website
+ */
+
 const puppeteer = require('puppeteer-extra')
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 const RecaptchaPlugin = require('puppeteer-extra-plugin-recaptcha')

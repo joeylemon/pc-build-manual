@@ -2,7 +2,7 @@ const express = require("express")
 const fs = require("fs")
 const utils = require("../utils.js")
 const builds = require("./builds.js")
-const getParts = require("./scraper.js")
+const getParts = require("./fetch-scraper.js")
 
 // The file to save prices
 const FILE_NAME = "./prices/prices.json"

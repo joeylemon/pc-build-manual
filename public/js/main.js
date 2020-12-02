@@ -9,7 +9,7 @@ function setSidebarOpened(open) {
     document.cookie = `sidebar=${!open}`
     if (open && !$("#sidebar").hasClass("active")) {
         $("#sidebar").addClass("active")
-    } else if(!open && $("#sidebar").hasClass("active")) {
+    } else if (!open && $("#sidebar").hasClass("active")) {
         $("#sidebar").removeClass("active")
     }
 }
@@ -110,24 +110,25 @@ $(document).ready(function () {
     }
 
     // Retrieve saved part prices when looking at part lists
-    if (window.location.href.includes("choosing-parts"))
+    if (window.location.href.includes("choosing-parts")) {
         loadSavedPrices()
 
-    // Refreshes part prices when user clicks button
-    $("[id$=-refresh]").on('click', function () {
-        const $elem = $(this)
-        const range = $elem.attr("id").split("-")[0]
+        // Refreshes part prices when user clicks button
+        $("[id$=-refresh]").on('click', function () {
+            const $elem = $(this)
+            const range = $elem.attr("id").split("-")[0]
 
-        $elem.find("svg").addClass("spinning")
+            $elem.find("svg").addClass("spinning")
 
-        // Set all prices to ellipses
-        $(`[id^=${range}-][id$=-price]`).html("...")
-        $elem.prop("disabled", true)
+            // Set all prices to ellipses
+            $(`[id^=${range}-][id$=-price]`).html("...")
+            $elem.prop("disabled", true)
 
-        refreshPrices(range).finally(() => {
-            $elem.prop("disabled", false)
-            $elem.find("svg").removeClass("spinning")
+            refreshPrices(range).finally(() => {
+                $elem.prop("disabled", false)
+                $elem.find("svg").removeClass("spinning")
+            })
         })
-    })
+    }
 
 })
