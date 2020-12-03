@@ -47,9 +47,7 @@ app.use(express.static('./public'))
 
 // EJS helper function to add a link to source reference
 // Reference a text in HTML with <%- ref("ESA") %>
-app.locals.ref = name => {
-    return getReferenceLink(name)
-}
+app.locals.ref = getReferenceLink
 
 // EJS helper function to add a link to a term definition
 // Link to a definition with <%- def("CPU") %> or <%- def("CPU", "processor") %>

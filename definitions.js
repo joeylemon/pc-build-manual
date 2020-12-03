@@ -1,4 +1,5 @@
-const { getReferenceLink } = require("./references")
+const logger = require("./logger.js")
+const { getReferenceLink } = require("./references.js")
 
 const MAX_TOOLTIP_LENGTH = 200
 
@@ -34,10 +35,16 @@ module.exports = {
     definitions: definitions,
 
     getDefinition: term => {
-        let def = definitions[term] ? definitions[term] : definitions[Object.keys(definitions).find(key => key.toLowerCase() == term)]
+        let def = definitions[Object.keys(definitions).find(key => key.toLowerCase() === term.toLowerCase())]
+        if (!def) {
+            logger.print(`could not find definition for term ${term}`)
+            return "An error occurred while searching for the definition of this term."
+        }
 
+        // Replace reference links with just the reference number
         def = def.replace(/<a href="references#(\w+)" .*<\/a>/, "[$1]")
 
+        // Truncate the definition if it's too long
         if (def.length > MAX_TOOLTIP_LENGTH)
             def = def.slice(0, MAX_TOOLTIP_LENGTH) + "..."
 

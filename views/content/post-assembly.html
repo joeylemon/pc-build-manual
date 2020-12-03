@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body" id="introduction">
-        <h2>Post Assembly</h2>
+        <h2>Post-Assembly</h2>
         <hr>
         <p>
             Once every part of the computer has been assembled, there are only a few more steps before you're fully
@@ -22,36 +22,42 @@
                 <p style="font-size: 10px;">An example BIOS screen <%- ref("Cutress") %></p>
             </div>
             <p>
-                <strong><i class="fas fa-check-circle"></i> First,</strong> you will want to check your <%- def("BIOS") %>. The way you access your <%- def("BIOS") %> will depend on
+                <strong><i class="fas fa-check-circle"></i> First,</strong> you will want to enter your
+                <%- def("BIOS") %>. The way you access your <%- def("BIOS") %> will depend on
                 what kind of motherboard you have and will require you to press a certain key when booting up your
-                computer. The most common of these keys are ESCAPE, DELETE, F1, F2, F8 or F10. The <%- def("BIOS") %> menu will look
-                one of two ways where you use your keyboard to navigate the menu or you are able to use your mouse to
-                navigate around the menu.
+                computer. The most common of these keys are ESCAPE, DELETE, F1, F2, F8 or F10. The <%- def("BIOS") %>
+                menu will look sometimes only allow menu navigation by keyboard, but modern motherboards allow mouse
+                navigation as well.
             </p>
         </div>
         <p>
-            <strong><i class="fas fa-check-circle"></i> Second</strong>, if you installed <%- def("RAM") %> that has a high speed, you will need to turn
-            on your XMP profile and simply change the frequency the <%- def("RAM") %> runs at to whatever they are advertised. For
-            example, if your <%- def("RAM") %> is <%- def("clock speed", "3000 MHz") %>, make sure the <%- def("BIOS") %> clearly shows that.
+            <strong><i class="fas fa-check-circle"></i> Second</strong>, if you installed <%- def("RAM") %> that has a
+            high speed, you will need to turn
+            on your XMP profile and simply change the frequency the <%- def("RAM") %> runs at to whatever they are
+            advertised. For
+            example, if your <%- def("RAM") %> is <%- def("clock speed", "3000 MHz") %>, make sure the
+            <%- def("BIOS") %> clearly shows that.
         </p>
         <p>
-            <strong><i class="fas fa-check-circle"></i> Third,</strong> you will now have to configure your boot drive for your operating system. The boot
-            order determines which device your computer is going to encounter first when your computer is booting up,
-            and that’ll need to be set to either the Windows installation disk or the Windows USB depending on which way
-            you are installing Windows. You will want to test this by inserting Windows, if it is by CD you will want to
-            turn on the computer and put the Windows CD into the CD tray. If for some reason it does not display you can
-            head to the boot section in your <%- def("BIOS") %> and look at the priority of devices and you can set the boot order so
-            that what ever Windows is on will be the first in the boot sequence.
+            <strong><i class="fas fa-check-circle"></i> Third,</strong> you will now have to configure your boot order
+            to start at your operating system. A motherboard's <%- def("BIOS") %> is in charge of finding where the
+            operating system is installed. You can explicitly tell it to start by looking at the storage device with
+            Windows on it. However, since you have not installed Windows yet, your boot order should start at either the
+            Windows installation disk or the Windows USB, depending on how
+            you are installing Windows. Therefore, the <%- def("BIOS") %> will boot the computer into the installation process.
         </p>
         <p>
-            <strong><i class="fas fa-check-circle"></i> Fourth,</strong> you will be installing the operating system. When first installing Windows 10 it
-            will prompt you with a window asking if you would like to install a 64-bit or 32-bit version, you will
-            always go with the 64-bit version unless you have a specific reason not to. You will then be prompted with
-            where you would like to install Windows, here you will want to select your <%- def("storage", "SSD") %> if available as it will load
-            and boot faster, if there is no <%- def("storage", "SSD") %> available then select any Hard Drive.
+            <strong><i class="fas fa-check-circle"></i> Fourth,</strong> you will be installing the operating system.
+            When first installing Windows 10, it
+            will prompt you with a window asking if you would like to install a 64-bit or 32-bit version. You will
+            always go with the 64-bit version unless you have a specific reason to do otherwise. You will then be prompted with
+            where you would like to install Windows, and you will want to select your <%- def("storage", "SSD") %> if
+            available as it will load
+            and boot faster. If your build does not contain an <%- def("storage", "SSD") %>, then select any <%- def("storage", "hard drive") %> that is available.
         </p>
         <p>
-            <strong><i class="fas fa-check-circle"></i> Finally,</strong> you will want to update Windows. After installing windows there will be an update
+            <strong><i class="fas fa-check-circle"></i> Finally,</strong> you will want to update Windows. After
+            installing windows there will be an update
             that will shortly follow so you will want to make sure that Windows is on its latest version.
         </p>
     </div>
