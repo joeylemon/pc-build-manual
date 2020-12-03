@@ -11,5 +11,13 @@ module.exports = {
                 return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
             }
         )
+    },
+    toID: str => {
+        return str.replace(/ /g, "-").toLowerCase()
+    },
+    getTimeCST: () => {
+        const now = new Date()
+        now.setHours(now.getHours() - 6)
+        return now
     }
 }

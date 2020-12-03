@@ -1,6 +1,7 @@
 const express = require("express")
 const fs = require("fs")
 const utils = require("../utils.js")
+const logger = require("../logger.js")
 const builds = require("./builds.js")
 const getParts = require("./fetch-scraper.js")
 
@@ -47,11 +48,13 @@ router.get('/refresh/:range', async (req, res) => {
     if (!builds[range])
         return res.status(400).send("bad id")
 
+    logger.print(`refresh prices for ${range} build`)
+
     // If the prices were refreshed recently, don't try to refresh again
     const savedPrices = getSavedPrices()
     if (savedPrices[range] && Date.now() - savedPrices[range].lastUpdated < REFRESH_DELAY) {
         const mins = Math.floor((Date.now() - savedPrices[range].lastUpdated) / 60000)
-        console.log("prices refreshed only", mins, "minutes ago, reuse saved prices")
+        logger.print(`prices refresh only ${mins} minutes ago, reuse saved prices`)
 
         savedPrices[range].lastUpdated = Date.now()
         
@@ -72,7 +75,7 @@ router.get('/refresh/:range', async (req, res) => {
         savePrices(range, build)
         return res.status(200).json(build)
     } catch (err) {
-        console.log("could not get parts:", err)
+        logger.print(`could not get parts: ${err}`)
         return res.status(500).send("could not get parts")
     }
 })

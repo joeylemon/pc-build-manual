@@ -8,6 +8,17 @@ h1, h2, p, li {
     font-family: 'Roboto', sans-serif;
 }
 
+.tooltip > .tooltip-inner {
+    background-color: #303030;
+    color: #fff;
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip > .tooltip-arrow {
+    background-color: #303030;
+    border-top: 5px solid #303030;
+}
+
 .btn-primary {
     background-color: #7386D5;
     border-color: #5c6eb6;

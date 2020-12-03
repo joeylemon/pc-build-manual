@@ -91,6 +91,9 @@ function updatePriceHTML(range, build) {
 
 $(document).ready(function () {
 
+    // Enable all tooltips
+    $('[data-toggle="tooltip"]').tooltip()
+
     // Collapse or expand the sidebar when the hamburger button is clicked
     $('#sidebarCollapse').on('click', function () {
         setSidebarOpened(!$('#sidebar').hasClass("active"))

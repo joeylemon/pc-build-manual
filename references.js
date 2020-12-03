@@ -35,4 +35,14 @@ const references = {
 for (const key of Object.keys(references))
     references[key] = references[key].replace(/Available: (.*)\./, `Available: <a href="$1" target="_blank">$1</a>`)
 
-module.exports = references
+module.exports = {
+    referenceList: references,
+
+    getReferenceLink: name => {
+        const idx = Object.keys(references).findIndex(key => key === name)
+        if (idx === -1)
+            throw new Error(`invalid reference id ${name}`)
+
+        return `<a href="references#${idx + 1}" style="color: #5d9dcc;">[${idx + 1}]</a>`
+    }
+}

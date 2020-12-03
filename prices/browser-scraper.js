@@ -2,6 +2,7 @@
  * Simulate a real browser to scrape a website
  */
 
+const logger = require("./logger.js")
 const puppeteer = require('puppeteer-extra')
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 const RecaptchaPlugin = require('puppeteer-extra-plugin-recaptcha')
@@ -18,7 +19,7 @@ puppeteer.use(
 )
 
 async function getParts(url) {
-    console.log("launch browser")
+    logger.print("launch browser")
     const browser = await puppeteer.launch({
         headless: true,
         userDataDir: "./browser_data",
@@ -35,18 +36,18 @@ async function getParts(url) {
         ]
     })
 
-    console.log("create page")
+    logger.print("create page")
     const page = await browser.newPage()
 
-    console.log("go to", url)
+    logger.print(`go to ${url}`)
     await page.goto(url, { waitUntil: "networkidle0" })
 
-    console.log("solve any captchas")
+    logger.print("solve any captchas")
     await page.solveRecaptchas()
 
     // console.log(await page.content())
 
-    console.log("scrape parts")
+    logger.print("scrape parts")
     const parts = await page.evaluate(() => {
         return Array.from(document.querySelectorAll(".selectorWrapper")).map(e => {
             const partDiv = e.querySelector(".selectorName")
