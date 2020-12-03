@@ -9,14 +9,22 @@ h1, h2, p, li {
 }
 
 .tooltip > .tooltip-inner {
-    background-color: #303030;
+    background-color: #7386D5;
     color: #fff;
     box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid #6075cb;
 }
 
-.tooltip > .tooltip-arrow {
-    background-color: #303030;
-    border-top: 5px solid #303030;
+.tooltip.show {
+    opacity: 0.97;
+}
+
+.bs-tooltip-auto[x-placement^=top] .arrow::before,.bs-tooltip-top .arrow::before {
+    border-top-color: #6075cb !important;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before,.bs-tooltip-bottom .arrow::before {
+    border-bottom-color: #6075cb !important; 
 }
 
 .btn-primary {
