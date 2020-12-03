@@ -28,7 +28,13 @@ const references = {
 
     "Cutress": `D. I. Cutress and G. Bonshor, “Overclocking The AMD Ryzen APUs: Guide and Results," 16-Apr-2018. [Online]. Available: https://www.anandtech.com/show/12542/overclocking-the-amd-ryzen-apus-guide-results/4.`,
 
-    "Amazon": `"Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more," Amazon.com. [Online]. Available: https://amazon.com.`
+    "Amazon": `"Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more," Amazon.com. [Online]. Available: https://amazon.com.`,
+
+    "Garcia": `D. Garcia, “The ultimate guide to mechanical keyboard switches for 2020,” Dygma, 17-Aug-2020. [Online]. Available: https://dygma.com/blogs/stories/the-ultimate-guide-to-mechanical-keyboard-switches-for-2019.`,
+
+    "PCPartPicker": `"Pick parts. Build your PC. Compare and share. - PCPartPicker," PCPartPicker.com. [Online]. Available: https://pcpartpicker.com.`,
+
+    "CPUBenchmark": `"PassMark Software - CPU Benchmark Charts," CPUBenchmark.net. [Online]. Available: https://cpubenchmark.net.`,
 }
 
 // Replace links with appropriate HTML tags

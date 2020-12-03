@@ -38,6 +38,16 @@ h1, h2, p, li {
     opacity: 0.7;
 }
 
+.external-link {
+    color: #5e9ecc;
+    text-decoration: underline;
+}
+
+.external-link:hover {
+    color: #2b6994;
+    text-decoration: underline;
+}
+
 .caption {
     font-size: 10px;
     margin: 0px;
